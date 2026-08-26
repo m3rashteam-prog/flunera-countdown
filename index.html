@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLUNERA AI — Something New Is Coming</title>
+
+    <meta
+        name="description"
+        content="FLUNERA AI — something new is coming. The next chapter begins soon."
+    >
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://flunera-ai.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flunera-ai.com/">
+    <meta property="og:title" content="FLUNERA AI — Something New Is Coming">
+    <meta
+        property="og:description"
+        content="The next chapter of FLUNERA AI begins soon."
+    >
+    <meta property="og:site_name" content="FLUNERA AI">
+
+    <meta name="theme-color" content="#6c5ce7">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            color: #ffffff;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(108, 92, 231, 0.28),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(0, 206, 201, 0.18),
+                    transparent 35%
+                ),
+                #080814;
+
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 0%,
+                    rgba(255,255,255,0.025) 50%,
+                    transparent 100%
+                );
+
+            pointer-events: none;
+        }
+
+        .page {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1050px;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+
+            animation: appear 1s ease forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+
+            margin-bottom: 65px;
+        }
+
+        .logo-main {
+            color: #ffffff;
+        }
+
+        .logo-ai {
+            background: linear-gradient(
+                90deg,
+                #6c5ce7,
+                #00cec9
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 8px 15px;
+
+            border-radius: 999px;
+
+            border: 1px solid rgba(108, 92, 231, 0.35);
+
+            background: rgba(108, 92, 231, 0.08);
+
+            color: #bdb7ff;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 92px);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+        }
+
+        h1 .gradient {
+            background:
+                linear-gradient(
+                    100deg,
+                    #ffffff 15%,
+                    #9b91ff 50%,
+                    #00cec9 90%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .quote {
+            max-width: 650px;
+
+            margin: 0 auto 60px;
+
+            color: rgba(255,255,255,0.62);
+
+            font-size: clamp(16px, 2vw, 19px);
+
+            line-height: 1.7;
+
+            font-weight: 400;
+        }
+
+        .quote-mark {
+            color: #6c5ce7;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .countdown {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(120px, 1fr));
+
+            gap: 16px;
+
+            max-width: 760px;
+
+            margin: 0 auto;
+        }
+
+        .time-box {
+            position: relative;
+
+            padding: 28px 15px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.075),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.2);
+
+            backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .time-box:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(108, 92, 231, 0.4);
+        }
+
+        .number {
+            display: block;
+
+            font-size: clamp(35px, 5vw, 54px);
+
+            font-weight: 800;
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #bcb8ff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .label {
+            display: block;
+
+            margin-top: 12px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.38);
+        }
+
+        .footer {
+            margin-top: 65px;
+
+            color: rgba(255,255,255,0.25);
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+        }
+
+        .glow {
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.12;
+
+            pointer-events: none;
+        }
+
+        .glow-one {
+            top: -180px;
+            left: -180px;
+
+            background: #6c5ce7;
+        }
+
+        .glow-two {
+            right: -180px;
+            bottom: -180px;
+
+            background: #00cec9;
+        }
+
+        @media (max-width: 650px) {
+
+            .page {
+                padding: 30px 18px;
+            }
+
+            .logo {
+                margin-bottom: 48px;
+            }
+
+            h1 {
+                letter-spacing: -2.5px;
+            }
+
+            .quote {
+                margin-bottom: 42px;
+            }
+
+            .countdown {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .time-box {
+                padding: 25px 12px;
+            }
+
+            .footer {
+                margin-top: 45px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .number {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="page">
+
+        <div class="container">
+
+            <div class="logo">
+                <span class="logo-main">FLUNERA</span>
+                <span class="logo-ai">AI</span>
+            </div>
+
+            <div class="badge">
+                SOMETHING NEW IS COMING
+            </div>
+
+            <h1>
+                The next chapter<br>
+                <span class="gradient">starts soon.</span>
+            </h1>
+
+            <p class="quote">
+                <span class="quote-mark">“</span>
+                Every step forward begins with a decision to learn.
+                <span class="quote-mark">”</span>
+            </p>
+
+            <section
+                class="countdown"
+                aria-label="Countdown to FLUNERA AI release"
+            >
+
+                <div class="time-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">DAYS</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">HOURS</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">MINUTES</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">SECONDS</span>
+                </div>
+
+            </section>
+
+            <div class="footer">
+                FLUNERA AI
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        /*
+         * FLUNERA AI RELEASE
+         * 31 August 2026 — 20:00 Tashkent time (UTC+5)
+         */
+
+        const releaseDate =
+            new Date("2026-08-31T20:00:00+05:00").getTime();
+
+        function goToLogin() {
+            window.location.replace("/login.html");
+        }
+
+        function updateCountdown() {
+
+            const now = Date.now();
+
+            const distance = releaseDate - now;
+
+            if (distance <= 0) {
+                goToLogin();
+                return;
+            }
+
+            const days =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            const hours =
+                Math.floor(
+                    (distance % (1000 * 60 * 60 * 24))
+                    / (1000 * 60 * 60)
+                );
+
+            const minutes =
+                Math.floor(
+                    (distance % (1000 * 60 * 60))
+                    / (1000 * 60)
+                );
+
+            const seconds =
+                Math.floor(
+                    (distance % (1000 * 60))
+                    / 1000
+                );
+
+            document.getElementById("days").textContent =
+                String(days).padStart(2, "0");
+
+            document.getElementById("hours").textContent =
+                String(hours).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+                String(minutes).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+                String(seconds).padStart(2, "0");
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
