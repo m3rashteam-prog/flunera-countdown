@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FLUNERA AI — Скоро</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="FLUNERA AI — интеллектуальная платформа для обучения, практики и развития. Скоро запуск.">
+    <title>Funera AI — Learn Languages Smarter</title>
 
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#090716">
+    <meta
+        name="description"
+        content="Funera AI is an AI-powered language learning platform for English practice, CEFR, IELTS, vocabulary and writing."
+    >
+
+    <meta
+        name="keywords"
+        content="Funera AI, AI language learning, English learning, IELTS practice, CEFR practice, AI writing assistant, vocabulary learning"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        property="og:title"
+        content="Funera AI — Learn Languages Smarter"
+    >
+
+    <meta
+        property="og:description"
+        content="Practice English, improve vocabulary, prepare for IELTS and CEFR, and write with AI."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
 
     <style>
         * {
@@ -19,181 +47,569 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             min-height: 100vh;
-            font-family: Inter, Arial, sans-serif;
-            color: white;
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #ffffff;
+
             background:
-                radial-gradient(circle at 20% 20%, rgba(108,92,231,.22), transparent 35%),
-                radial-gradient(circle at 80% 70%, rgba(0,206,201,.14), transparent 35%),
-                #090716;
-            overflow: hidden;
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(108, 92, 231, .28),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(0, 206, 201, .18),
+                    transparent 28%
+                ),
+                #070b17;
         }
 
-        .background {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-            opacity: .35;
-        }
-
-        .orb.one {
-            width: 300px;
-            height: 300px;
-            background: #6c5ce7;
-            top: -100px;
-            left: -80px;
-        }
-
-        .orb.two {
-            width: 280px;
-            height: 280px;
-            background: #00cec9;
-            right: -100px;
-            bottom: -100px;
+        button,
+        input {
+            font: inherit;
         }
 
         .container {
-            position: relative;
-            z-index: 2;
-            width: min(1000px, 92%);
-            min-height: 100vh;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: min(
+                1120px,
+                calc(100% - 40px)
+            );
+
+            margin: 0 auto;
         }
 
-        .card {
-            width: 100%;
-            padding: 65px 35px;
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 32px;
-            background: rgba(255,255,255,.045);
-            backdrop-filter: blur(25px);
-            box-shadow:
-                0 30px 100px rgba(0,0,0,.45),
-                inset 0 1px 0 rgba(255,255,255,.05);
+        /* NAV */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 100;
+
+            background:
+                rgba(7, 11, 23, .72);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .nav-inner {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 15px;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: -.6px;
+        }
+
+        .logo span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b7cff,
+                    #00cec9
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #b9c0d4;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-button {
+            padding: 10px 17px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c5ce7,
+                    #00a8a5
+                );
+
             font-weight: 800;
-            letter-spacing: 5px;
-            color: #aaa3ff;
-            margin-bottom: 28px;
+            color: white !important;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding:
+                120px 0
+                70px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.05fr
+                .95fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+
+            padding: 8px 13px;
+
+            border:
+                1px solid
+                rgba(139,124,255,.35);
+
+            border-radius: 999px;
+
+            background:
+                rgba(108,92,231,.10);
+
+            color: #c9c3ff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 22px;
         }
 
         h1 {
-            font-size: clamp(52px, 9vw, 105px);
+            font-size:
+                clamp(
+                    48px,
+                    7vw,
+                    82px
+                );
+
             line-height: .95;
-            letter-spacing: -5px;
+
+            letter-spacing: -4px;
+
             margin-bottom: 25px;
-            background: linear-gradient(90deg, #ffffff, #aaa3ff, #78e8e3);
+        }
+
+        h1 .gradient {
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b7cff,
+                    #00cec9
+                );
+
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+            color: transparent;
         }
 
-        .subtitle {
+        .hero-text {
+            color: #aeb6cc;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
             max-width: 650px;
-            margin: 0 auto 42px;
-            color: #aaa7bd;
-            font-size: 18px;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .primary {
+            border: 0;
+
+            padding: 15px 23px;
+
+            border-radius: 14px;
+
+            cursor: pointer;
+
+            color: white;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c5ce7,
+                    #00a8a5
+                );
+
+            box-shadow:
+                0 15px 40px
+                rgba(108,92,231,.22);
+
+            transition: .2s;
+        }
+
+        .primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            padding: 14px 22px;
+
+            border-radius: 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            color: #dce1ef;
+
+            background:
+                rgba(255,255,255,.04);
+        }
+
+        /* PRE REG CARD */
+
+        .pre-card {
+            padding: 30px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.035)
+                );
+
+            box-shadow:
+                0 30px 90px
+                rgba(0,0,0,.35);
+
+            backdrop-filter: blur(20px);
+        }
+
+        .pre-card h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pre-card > p {
+            color: #aab2c8;
             line-height: 1.6;
+            margin-bottom: 22px;
         }
 
-        .quote {
-            max-width: 650px;
-            margin: 0 auto 45px;
-            padding: 0 20px;
-            color: #ddd9ed;
-            font-size: 21px;
+        .bonus {
+            padding: 15px;
+
+            margin-bottom: 18px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(108,92,231,.12);
+
+            border:
+                1px solid
+                rgba(139,124,255,.18);
+        }
+
+        .bonus strong {
+            display: block;
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .bonus small {
+            color: #9fa8bd;
+        }
+
+        .input {
+            width: 100%;
+
+            padding: 15px 16px;
+
+            margin-bottom: 12px;
+
+            border-radius: 13px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            outline: none;
+
+            color: white;
+
+            background:
+                rgba(0,0,0,.22);
+        }
+
+        .input:focus {
+            border-color: #6c5ce7;
+        }
+
+        .pre-button {
+            width: 100%;
+        }
+
+        .message {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 13px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
             line-height: 1.5;
-            font-style: italic;
         }
 
-        .quote::before {
-            content: "“";
-            font-size: 50px;
-            color: #6c5ce7;
-            vertical-align: -15px;
-            margin-right: 5px;
+        .message.success {
+            display: block;
+
+            background:
+                rgba(0,206,201,.10);
+
+            border:
+                1px solid
+                rgba(0,206,201,.25);
+
+            color: #8ff5ee;
         }
 
-        .timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+        .message.error {
+            display: block;
+
+            background:
+                rgba(255,80,100,.10);
+
+            border:
+                1px solid
+                rgba(255,80,100,.25);
+
+            color: #ff9ca9;
+        }
+
+        /* FEATURES */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+
             max-width: 700px;
-            margin: auto;
+
+            margin:
+                0 auto
+                50px;
         }
 
-        .time-box {
-            padding: 24px 10px;
-            border-radius: 20px;
-            background: rgba(255,255,255,.055);
-            border: 1px solid rgba(255,255,255,.08);
+        .section-title h2 {
+            font-size: 42px;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 14px;
         }
 
-        .number {
-            display: block;
-            font-size: clamp(30px, 5vw, 55px);
-            font-weight: 800;
-            letter-spacing: -2px;
+        .section-title p {
+            color: #9da6bc;
+
+            line-height: 1.7;
         }
 
-        .label {
-            display: block;
-            margin-top: 8px;
-            color: #858198;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
         }
 
-        .status {
-            margin-top: 35px;
-            color: #77738b;
+        .feature {
+            padding: 27px;
+
+            border-radius: 22px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.035);
+        }
+
+        .feature-icon {
+            font-size: 30px;
+
+            margin-bottom: 16px;
+        }
+
+        .feature h3 {
+            margin-bottom: 9px;
+            font-size: 19px;
+        }
+
+        .feature p {
+            color: #98a2b9;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+        /* BONUS */
+
+        .bonus-section {
+            text-align: center;
+        }
+
+        .bonus-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .bonus-box {
+            padding: 30px;
+
+            border-radius: 22px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.035);
+        }
+
+        .bonus-number {
+            font-size: 38px;
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b7cff,
+                    #00cec9
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            margin-bottom: 8px;
+        }
+
+        .bonus-box p {
+            color: #a5aec3;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 0;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+
+            color: #7e879c;
+
             font-size: 13px;
+
+            text-align: center;
         }
 
-        .dot {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            margin-right: 8px;
-            border-radius: 50%;
-            background: #00cec9;
-            box-shadow: 0 0 12px #00cec9;
-        }
+        /* MOBILE */
 
-        @media (max-width: 650px) {
-            .card {
-                padding: 45px 18px;
-                border-radius: 24px;
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
             }
 
             h1 {
-                letter-spacing: -3px;
+                letter-spacing: -2.5px;
             }
 
-            .subtitle {
-                font-size: 16px;
+            .features,
+            .bonus-grid {
+                grid-template-columns: 1fr;
             }
 
-            .quote {
-                font-size: 18px;
-            }
-
-            .timer {
-                grid-template-columns: repeat(2, 1fr);
+            .hero {
+                padding-top: 110px;
             }
         }
     </style>
@@ -201,98 +617,550 @@
 
 <body>
 
-<div class="background">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-</div>
+<nav>
+    <div class="container nav-inner">
 
-<main class="container">
-    <section class="card">
+        <a
+            href="#top"
+            class="logo"
+        >
+            <span>Funera AI</span>
+        </a>
 
-        <div class="logo">FLUNERA AI</div>
+        <div class="nav-links">
 
-        <h1>Скоро.</h1>
+            <a href="#features">
+                Features
+            </a>
 
-        <p class="subtitle">
-            Мы готовим кое-что большое.
-            FLUNERA AI уже близко.
-        </p>
+            <a href="#bonuses">
+                Bonuses
+            </a>
 
-        <div class="quote">
-            Будущее начинается с первого шага.
-        </div>
-
-        <div class="timer">
-
-            <div class="time-box">
-                <span class="number" id="days">00</span>
-                <span class="label">Дней</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="hours">00</span>
-                <span class="label">Часов</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="minutes">00</span>
-                <span class="label">Минут</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="seconds">00</span>
-                <span class="label">Секунд</span>
-            </div>
+            <a
+                href="#preregister"
+                class="nav-button"
+            >
+                Pre-register
+            </a>
 
         </div>
 
-        <div class="status">
-            <span class="dot"></span>
-            FLUNERA AI готовится к запуску
+    </div>
+</nav>
+
+
+<main id="top">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+            <div>
+
+                <div class="badge">
+                    🚀 Early access is opening soon
+                </div>
+
+                <h1>
+                    Learn smarter
+                    with
+                    <span class="gradient">
+                        Funera AI
+                    </span>
+                </h1>
+
+                <p class="hero-text">
+                    AI-powered language learning,
+                    English practice, vocabulary,
+                    IELTS and CEFR preparation,
+                    and intelligent writing tools —
+                    all in one place.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#preregister"
+                        class="primary"
+                    >
+                        Get Early Access
+                    </a>
+
+                    <a
+                        href="#features"
+                        class="secondary"
+                    >
+                        Explore Funera AI
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRE REGISTRATION -->
+
+            <div
+                class="pre-card"
+                id="preregister"
+            >
+
+                <h2>
+                    Join the early access
+                </h2>
+
+                <p>
+                    Pre-register now and receive
+                    free Stars when your Funera AI
+                    account is created.
+                </p>
+
+                <div class="bonus">
+
+                    <strong>
+                        🎁 Early users get bonuses
+                    </strong>
+
+                    <small>
+                        The earlier you join,
+                        the bigger your bonus.
+                    </small>
+
+                </div>
+
+                <input
+                    id="name"
+                    class="input"
+                    type="text"
+                    maxlength="100"
+                    placeholder="Your name"
+                    autocomplete="name"
+                >
+
+                <input
+                    id="email"
+                    class="input"
+                    type="email"
+                    placeholder="Your email"
+                    autocomplete="email"
+                >
+
+                <button
+                    id="preButton"
+                    class="primary pre-button"
+                    type="button"
+                >
+                    Pre-register for free
+                </button>
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+            </div>
+
         </div>
 
     </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Everything for your
+                    language journey
+                </h2>
+
+                <p>
+                    Funera AI combines AI-powered
+                    learning tools with practical
+                    language practice.
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        AI Learning
+                    </h3>
+
+                    <p>
+                        Get intelligent explanations,
+                        exercises and personalized
+                        language practice.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Vocabulary
+                    </h3>
+
+                    <p>
+                        Learn words with examples,
+                        memory techniques and
+                        spaced review.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        IELTS & CEFR
+                    </h3>
+
+                    <p>
+                        Practice realistic exam-style
+                        tasks and track your progress.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✍️
+                    </div>
+
+                    <h3>
+                        AI Writer
+                    </h3>
+
+                    <p>
+                        Create, improve and practice
+                        writing with AI assistance.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Stars
+                    </h3>
+
+                    <p>
+                        Earn Stars and use them
+                        inside the Funera AI ecosystem.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Built for learners
+                    </h3>
+
+                    <p>
+                        One platform for practice,
+                        preparation and progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BONUSES -->
+
+    <section
+        id="bonuses"
+        class="bonus-section"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Early access rewards
+                </h2>
+
+                <p>
+                    Join before launch to secure
+                    your early-user bonus.
+                </p>
+
+            </div>
+
+
+            <div class="bonus-grid">
+
+                <div class="bonus-box">
+
+                    <div class="bonus-number">
+                        10K
+                    </div>
+
+                    <p>
+                        Stars for the first
+                        100 users
+                    </p>
+
+                </div>
+
+
+                <div class="bonus-box">
+
+                    <div class="bonus-number">
+                        5K
+                    </div>
+
+                    <p>
+                        Stars for users
+                        101–500
+                    </p>
+
+                </div>
+
+
+                <div class="bonus-box">
+
+                    <div class="bonus-number">
+                        2K
+                    </div>
+
+                    <p>
+                        Stars for users
+                        after 500
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </main>
 
+
+<footer>
+
+    © 2026 Funera AI.
+    All rights reserved.
+
+</footer>
+
+
 <script>
-    // 31 августа 2026, 20:00 по времени Ташкента (UTC+5)
-    const releaseDate = new Date("2026-08-31T20:00:00+05:00");
+"use strict";
 
-    const days = document.getElementById("days");
-    const hours = document.getElementById("hours");
-    const minutes = document.getElementById("minutes");
-    const seconds = document.getElementById("seconds");
+const preButton =
+    document.getElementById("preButton");
 
-    function updateCountdown() {
-        const now = new Date();
-        const difference = releaseDate.getTime() - now.getTime();
+const nameInput =
+    document.getElementById("name");
 
-        if (difference <= 0) {
-            days.textContent = "00";
-            hours.textContent = "00";
-            minutes.textContent = "00";
-            seconds.textContent = "00";
+const emailInput =
+    document.getElementById("email");
 
-            // После окончания отсчёта открываем регистрацию
-            window.location.href = "/login.html";
+const message =
+    document.getElementById("message");
+
+
+function showMessage(
+    text,
+    type
+) {
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+}
+
+
+preButton.addEventListener(
+    "click",
+    async () => {
+
+        const name =
+            nameInput.value.trim();
+
+        const email =
+            emailInput.value.trim();
+
+        if (!email) {
+
+            showMessage(
+                "Please enter your email.",
+                "error"
+            );
+
+            emailInput.focus();
+
             return;
         }
 
-        const totalSeconds = Math.floor(difference / 1000);
 
-        const d = Math.floor(totalSeconds / 86400);
-        const h = Math.floor((totalSeconds % 86400) / 3600);
-        const m = Math.floor((totalSeconds % 3600) / 60);
-        const s = totalSeconds % 60;
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        days.textContent = String(d).padStart(2, "0");
-        hours.textContent = String(h).padStart(2, "0");
-        minutes.textContent = String(m).padStart(2, "0");
-        seconds.textContent = String(s).padStart(2, "0");
+
+        if (!emailPattern.test(email)) {
+
+            showMessage(
+                "Please enter a valid email.",
+                "error"
+            );
+
+            emailInput.focus();
+
+            return;
+        }
+
+
+        preButton.disabled = true;
+
+        preButton.textContent =
+            "Registering...";
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/preregister",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify({
+                                name,
+                                email
+                            })
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok || !data.ok) {
+
+                if (
+                    data.position &&
+                    data.bonusStars
+                ) {
+
+                    showMessage(
+                        `This email is already registered. Your position is #${data.position}.`,
+                        "error"
+                    );
+
+                } else {
+
+                    showMessage(
+                        data.error ||
+                        "Something went wrong.",
+                        "error"
+                    );
+
+                }
+
+                return;
+            }
+
+
+            const registration =
+                data.registration;
+
+
+            showMessage(
+                `🎉 You're registered! Your position is #${registration.position}. Your early-access bonus is ${registration.bonusStars.toLocaleString()} Stars.`,
+                "success"
+            );
+
+
+            nameInput.disabled = true;
+            emailInput.disabled = true;
+
+            preButton.textContent =
+                "✓ You're registered";
+
+
+        } catch (error) {
+
+            console.error(
+                "Pre-registration error:",
+                error
+            );
+
+            showMessage(
+                "Cannot connect to Funera AI server. Please try again.",
+                "error"
+            );
+
+        } finally {
+
+            if (
+                !nameInput.disabled
+            ) {
+                preButton.disabled =
+                    false;
+
+                preButton.textContent =
+                    "Pre-register for free";
+            }
+
+        }
+
     }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+);
 </script>
 
 </body>
