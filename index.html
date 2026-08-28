@@ -2,614 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Funera AI — Early Access</title>
+    <meta name="description" content="Join Funera AI before launch and unlock a special early-user reward.">
 
-    <title>Funera AI — Learn Languages Smarter</title>
-
-    <meta
-        name="description"
-        content="Funera AI is an AI-powered language learning platform for English practice, CEFR, IELTS, vocabulary and writing."
-    >
-
-    <meta
-        name="keywords"
-        content="Funera AI, AI language learning, English learning, IELTS practice, CEFR practice, AI writing assistant, vocabulary learning"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow"
-    >
-
-    <meta
-        property="og:title"
-        content="Funera AI — Learn Languages Smarter"
-    >
-
-    <meta
-        property="og:description"
-        content="Practice English, improve vocabulary, prepare for IELTS and CEFR, and write with AI."
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
             min-height: 100vh;
-            font-family:
-                Inter,
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, sans-serif;
             color: #ffffff;
-
-            background:
-                radial-gradient(
-                    circle at 20% 10%,
-                    rgba(108, 92, 231, .28),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(0, 206, 201, .18),
-                    transparent 28%
-                ),
-                #070b17;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button,
-        input {
-            font: inherit;
+            background: linear-gradient(135deg, #090b18, #11152c);
         }
 
         .container {
-            width: min(
-                1120px,
-                calc(100% - 40px)
-            );
-
-            margin: 0 auto;
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
         }
-
-        /* NAV */
 
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-
-            z-index: 100;
-
-            background:
-                rgba(7, 11, 23, .72);
-
-            backdrop-filter: blur(18px);
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,.08);
-        }
-
-        .nav-inner {
-            height: 72px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 24px 0;
         }
 
         .logo {
-            font-size: 23px;
-            font-weight: 900;
-            letter-spacing: -.6px;
+            font-size: 24px;
+            font-weight: 800;
         }
 
         .logo span {
-            background:
-                linear-gradient(
-                    90deg,
-                    #8b7cff,
-                    #00cec9
-                );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #8b7cff;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 26px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #b9c0d4;
-            font-size: 14px;
-            transition: .2s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .nav-button {
-            padding: 10px 17px;
-
-            border-radius: 12px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #6c5ce7,
-                    #00a8a5
-                );
-
-            font-weight: 800;
-            color: white !important;
-        }
-
-        /* HERO */
 
         .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-
-            padding:
-                120px 0
-                70px;
-        }
-
-        .hero-grid {
-            display: grid;
-
-            grid-template-columns:
-                1.05fr
-                .95fr;
-
-            gap: 70px;
-
-            align-items: center;
+            text-align: center;
+            padding: 80px 0 70px;
         }
 
         .badge {
-            display: inline-flex;
-
-            padding: 8px 13px;
-
-            border:
-                1px solid
-                rgba(139,124,255,.35);
-
+            display: inline-block;
+            padding: 9px 16px;
             border-radius: 999px;
-
-            background:
-                rgba(108,92,231,.10);
-
-            color: #c9c3ff;
-
-            font-size: 13px;
-            font-weight: 700;
-
+            background: rgba(108, 92, 231, .18);
+            border: 1px solid rgba(139, 124, 255, .35);
+            color: #c4bcff;
             margin-bottom: 22px;
         }
 
         h1 {
-            font-size:
-                clamp(
-                    48px,
-                    7vw,
-                    82px
-                );
-
-            line-height: .95;
-
-            letter-spacing: -4px;
-
-            margin-bottom: 25px;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin: 0 0 22px;
         }
 
-        h1 .gradient {
-            background:
-                linear-gradient(
-                    90deg,
-                    #8b7cff,
-                    #00cec9
-                );
-
+        h1 span {
+            background: linear-gradient(90deg, #8b7cff, #00cec9);
             -webkit-background-clip: text;
-            background-clip: text;
-
             color: transparent;
         }
 
-        .hero-text {
-            color: #aeb6cc;
-
-            font-size: 19px;
-
-            line-height: 1.7;
-
-            max-width: 650px;
-
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-        }
-
-        .primary {
-            border: 0;
-
-            padding: 15px 23px;
-
-            border-radius: 14px;
-
-            cursor: pointer;
-
-            color: white;
-
-            font-weight: 900;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #6c5ce7,
-                    #00a8a5
-                );
-
-            box-shadow:
-                0 15px 40px
-                rgba(108,92,231,.22);
-
-            transition: .2s;
-        }
-
-        .primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .secondary {
-            padding: 14px 22px;
-
-            border-radius: 14px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.12);
-
-            color: #dce1ef;
-
-            background:
-                rgba(255,255,255,.04);
-        }
-
-        /* PRE REG CARD */
-
-        .pre-card {
-            padding: 30px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.11);
-
-            border-radius: 28px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.09),
-                    rgba(255,255,255,.035)
-                );
-
-            box-shadow:
-                0 30px 90px
-                rgba(0,0,0,.35);
-
-            backdrop-filter: blur(20px);
-        }
-
-        .pre-card h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .pre-card > p {
-            color: #aab2c8;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
-
-        .bonus {
-            padding: 15px;
-
-            margin-bottom: 18px;
-
-            border-radius: 16px;
-
-            background:
-                rgba(108,92,231,.12);
-
-            border:
-                1px solid
-                rgba(139,124,255,.18);
-        }
-
-        .bonus strong {
-            display: block;
-
+        .subtitle {
+            max-width: 680px;
+            margin: auto;
+            color: #b9bdd2;
             font-size: 18px;
-
-            margin-bottom: 5px;
-        }
-
-        .bonus small {
-            color: #9fa8bd;
-        }
-
-        .input {
-            width: 100%;
-
-            padding: 15px 16px;
-
-            margin-bottom: 12px;
-
-            border-radius: 13px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.12);
-
-            outline: none;
-
-            color: white;
-
-            background:
-                rgba(0,0,0,.22);
-        }
-
-        .input:focus {
-            border-color: #6c5ce7;
-        }
-
-        .pre-button {
-            width: 100%;
-        }
-
-        .message {
-            display: none;
-
-            margin-top: 15px;
-
-            padding: 13px;
-
-            border-radius: 12px;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-        }
-
-        .message.success {
-            display: block;
-
-            background:
-                rgba(0,206,201,.10);
-
-            border:
-                1px solid
-                rgba(0,206,201,.25);
-
-            color: #8ff5ee;
-        }
-
-        .message.error {
-            display: block;
-
-            background:
-                rgba(255,80,100,.10);
-
-            border:
-                1px solid
-                rgba(255,80,100,.25);
-
-            color: #ff9ca9;
-        }
-
-        /* FEATURES */
-
-        section {
-            padding: 90px 0;
-        }
-
-        .section-title {
-            text-align: center;
-
-            max-width: 700px;
-
-            margin:
-                0 auto
-                50px;
-        }
-
-        .section-title h2 {
-            font-size: 42px;
-
-            letter-spacing: -1.5px;
-
-            margin-bottom: 14px;
-        }
-
-        .section-title p {
-            color: #9da6bc;
-
             line-height: 1.7;
+        }
+
+        .early-card {
+            max-width: 580px;
+            margin: 45px auto 0;
+            padding: 32px;
+            border-radius: 24px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .early-card h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .early-card p {
+            color: #b9bdd2;
+            line-height: 1.6;
+        }
+
+        .google-btn {
+            width: 100%;
+            border: 0;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-top: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            background: white;
+            color: #202124;
+            transition: transform .2s, opacity .2s;
+        }
+
+        .google-btn:hover {
+            transform: translateY(-2px);
+            opacity: .95;
+        }
+
+        .status {
+            min-height: 24px;
+            margin-top: 18px;
+            color: #b9bdd2;
         }
 
         .features {
+            padding: 50px 0 90px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 35px;
+        }
+
+        .grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
         }
 
         .feature {
-            padding: 27px;
-
-            border-radius: 22px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-
-            background:
-                rgba(255,255,255,.035);
+            padding: 24px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
         }
 
-        .feature-icon {
-            font-size: 30px;
-
-            margin-bottom: 16px;
+        .feature .icon {
+            font-size: 28px;
         }
 
         .feature h3 {
-            margin-bottom: 9px;
-            font-size: 19px;
+            margin-bottom: 10px;
         }
 
         .feature p {
-            color: #98a2b9;
-
-            line-height: 1.6;
-
-            font-size: 14px;
+            margin: 0;
+            color: #aeb3c8;
+            line-height: 1.5;
         }
-
-        /* BONUS */
-
-        .bonus-section {
-            text-align: center;
-        }
-
-        .bonus-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 18px;
-        }
-
-        .bonus-box {
-            padding: 30px;
-
-            border-radius: 22px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-
-            background:
-                rgba(255,255,255,.035);
-        }
-
-        .bonus-number {
-            font-size: 38px;
-            font-weight: 900;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #8b7cff,
-                    #00cec9
-                );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
-
-            margin-bottom: 8px;
-        }
-
-        .bonus-box p {
-            color: #a5aec3;
-        }
-
-        /* FOOTER */
 
         footer {
-            padding: 35px 0;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.07);
-
-            color: #7e879c;
-
-            font-size: 13px;
-
             text-align: center;
+            padding: 30px;
+            color: #777d98;
+            border-top: 1px solid rgba(255,255,255,.06);
         }
 
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-
-                gap: 35px;
-            }
-
-            h1 {
-                letter-spacing: -2.5px;
-            }
-
-            .features,
-            .bonus-grid {
+        @media (max-width: 750px) {
+            .grid {
                 grid-template-columns: 1fr;
             }
 
             .hero {
-                padding-top: 110px;
+                padding-top: 50px;
             }
         }
     </style>
@@ -617,550 +181,170 @@
 
 <body>
 
-<nav>
-    <div class="container nav-inner">
+<div class="container">
+    <nav>
+        <div class="logo">Funera <span>AI</span></div>
+    </nav>
 
-        <a
-            href="#top"
-            class="logo"
-        >
-            <span>Funera AI</span>
-        </a>
+    <main>
+        <section class="hero">
+            <div class="badge">🚀 EARLY ACCESS</div>
 
-        <div class="nav-links">
+            <h1>Your language journey<br>starts with <span>Funera AI</span></h1>
 
-            <a href="#features">
-                Features
-            </a>
+            <p class="subtitle">
+                AI-powered learning, vocabulary, IELTS & CEFR practice
+                and writing tools — all in one place.
+            </p>
 
-            <a href="#bonuses">
-                Bonuses
-            </a>
-
-            <a
-                href="#preregister"
-                class="nav-button"
-            >
-                Pre-register
-            </a>
-
-        </div>
-
-    </div>
-</nav>
-
-
-<main id="top">
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="container hero-grid">
-
-            <div>
-
-                <div class="badge">
-                    🚀 Early access is opening soon
-                </div>
-
-                <h1>
-                    Learn smarter
-                    with
-                    <span class="gradient">
-                        Funera AI
-                    </span>
-                </h1>
-
-                <p class="hero-text">
-                    AI-powered language learning,
-                    English practice, vocabulary,
-                    IELTS and CEFR preparation,
-                    and intelligent writing tools —
-                    all in one place.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#preregister"
-                        class="primary"
-                    >
-                        Get Early Access
-                    </a>
-
-                    <a
-                        href="#features"
-                        class="secondary"
-                    >
-                        Explore Funera AI
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRE REGISTRATION -->
-
-            <div
-                class="pre-card"
-                id="preregister"
-            >
-
-                <h2>
-                    Join the early access
-                </h2>
+            <div class="early-card">
+                <h2>🎁 Something special is waiting</h2>
 
                 <p>
-                    Pre-register now and receive
-                    free Stars when your Funera AI
-                    account is created.
+                    Join Funera AI before launch and secure an exclusive
+                    early-user reward.
                 </p>
 
-                <div class="bonus">
+                <p>
+                    <strong>The earlier you join, the more special your journey begins.</strong>
+                </p>
 
-                    <strong>
-                        🎁 Early users get bonuses
-                    </strong>
-
-                    <small>
-                        The earlier you join,
-                        the bigger your bonus.
-                    </small>
-
-                </div>
-
-                <input
-                    id="name"
-                    class="input"
-                    type="text"
-                    maxlength="100"
-                    placeholder="Your name"
-                    autocomplete="name"
-                >
-
-                <input
-                    id="email"
-                    class="input"
-                    type="email"
-                    placeholder="Your email"
-                    autocomplete="email"
-                >
-
-                <button
-                    id="preButton"
-                    class="primary pre-button"
-                    type="button"
-                >
-                    Pre-register for free
+                <button class="google-btn" id="googleLogin">
+                    Continue with Google
                 </button>
 
-                <div
-                    id="message"
-                    class="message"
-                ></div>
-
+                <div class="status" id="status"></div>
             </div>
+        </section>
 
-        </div>
+        <section class="features">
+            <h2>Everything for your language journey</h2>
 
-    </section>
+            <div class="grid">
+                <div class="feature">
+                    <div class="icon">🤖</div>
+                    <h3>AI Learning</h3>
+                    <p>Intelligent explanations, exercises and personalized practice.</p>
+                </div>
 
+                <div class="feature">
+                    <div class="icon">📚</div>
+                    <h3>Vocabulary</h3>
+                    <p>Learn words with examples, memory techniques and smart review.</p>
+                </div>
 
-    <!-- FEATURES -->
+                <div class="feature">
+                    <div class="icon">🎯</div>
+                    <h3>IELTS & CEFR</h3>
+                    <p>Practice realistic exam-style tasks and track your progress.</p>
+                </div>
 
-    <section id="features">
+                <div class="feature">
+                    <div class="icon">✍️</div>
+                    <h3>AI Writer</h3>
+                    <p>Create, improve and practice writing with AI assistance.</p>
+                </div>
 
-        <div class="container">
+                <div class="feature">
+                    <div class="icon">⭐</div>
+                    <h3>Stars</h3>
+                    <p>Earn rewards as you learn and progress through Funera AI.</p>
+                </div>
 
-            <div class="section-title">
-
-                <h2>
-                    Everything for your
-                    language journey
-                </h2>
-
-                <p>
-                    Funera AI combines AI-powered
-                    learning tools with practical
-                    language practice.
-                </p>
-
+                <div class="feature">
+                    <div class="icon">🚀</div>
+                    <h3>Built for learners</h3>
+                    <p>One platform for practice, preparation and real progress.</p>
+                </div>
             </div>
-
-
-            <div class="features">
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        🤖
-                    </div>
-
-                    <h3>
-                        AI Learning
-                    </h3>
-
-                    <p>
-                        Get intelligent explanations,
-                        exercises and personalized
-                        language practice.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        📚
-                    </div>
-
-                    <h3>
-                        Vocabulary
-                    </h3>
-
-                    <p>
-                        Learn words with examples,
-                        memory techniques and
-                        spaced review.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        🎯
-                    </div>
-
-                    <h3>
-                        IELTS & CEFR
-                    </h3>
-
-                    <p>
-                        Practice realistic exam-style
-                        tasks and track your progress.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ✍️
-                    </div>
-
-                    <h3>
-                        AI Writer
-                    </h3>
-
-                    <p>
-                        Create, improve and practice
-                        writing with AI assistance.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ⭐
-                    </div>
-
-                    <h3>
-                        Stars
-                    </h3>
-
-                    <p>
-                        Earn Stars and use them
-                        inside the Funera AI ecosystem.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        🚀
-                    </div>
-
-                    <h3>
-                        Built for learners
-                    </h3>
-
-                    <p>
-                        One platform for practice,
-                        preparation and progress.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- BONUSES -->
-
-    <section
-        id="bonuses"
-        class="bonus-section"
-    >
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Early access rewards
-                </h2>
-
-                <p>
-                    Join before launch to secure
-                    your early-user bonus.
-                </p>
-
-            </div>
-
-
-            <div class="bonus-grid">
-
-                <div class="bonus-box">
-
-                    <div class="bonus-number">
-                        10K
-                    </div>
-
-                    <p>
-                        Stars for the first
-                        100 users
-                    </p>
-
-                </div>
-
-
-                <div class="bonus-box">
-
-                    <div class="bonus-number">
-                        5K
-                    </div>
-
-                    <p>
-                        Stars for users
-                        101–500
-                    </p>
-
-                </div>
-
-
-                <div class="bonus-box">
-
-                    <div class="bonus-number">
-                        2K
-                    </div>
-
-                    <p>
-                        Stars for users
-                        after 500
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
+        </section>
+    </main>
+</div>
 
 <footer>
-
-    © 2026 Funera AI.
-    All rights reserved.
-
+    © 2026 Funera AI. All rights reserved.
 </footer>
 
-
 <script>
-"use strict";
+    const status = document.getElementById("status");
+    const googleButton = document.getElementById("googleLogin");
 
-const preButton =
-    document.getElementById("preButton");
+    let googleClientId = "";
 
-const nameInput =
-    document.getElementById("name");
+    async function loadConfig() {
+        const response = await fetch("/api/config");
+        const data = await response.json();
 
-const emailInput =
-    document.getElementById("email");
+        googleClientId = data.googleClientId || "";
 
-const message =
-    document.getElementById("message");
-
-
-function showMessage(
-    text,
-    type
-) {
-    message.textContent = text;
-
-    message.className =
-        "message " + type;
-}
-
-
-preButton.addEventListener(
-    "click",
-    async () => {
-
-        const name =
-            nameInput.value.trim();
-
-        const email =
-            emailInput.value.trim();
-
-        if (!email) {
-
-            showMessage(
-                "Please enter your email.",
-                "error"
-            );
-
-            emailInput.focus();
-
-            return;
+        if (!googleClientId) {
+            status.textContent = "Google sign-in is not configured yet.";
         }
+    }
 
+    function handleGoogleCredential(response) {
+        status.textContent = "Signing you in...";
 
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-        if (!emailPattern.test(email)) {
-
-            showMessage(
-                "Please enter a valid email.",
-                "error"
-            );
-
-            emailInput.focus();
-
-            return;
-        }
-
-
-        preButton.disabled = true;
-
-        preButton.textContent =
-            "Registering...";
-
-
-        try {
-
-            const response =
-                await fetch(
-                    "/api/preregister",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body:
-                            JSON.stringify({
-                                name,
-                                email
-                            })
-                    }
-                );
-
-
-            const data =
-                await response.json();
-
+        fetch("/api/auth/google", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: "include",
+            body: JSON.stringify({
+                credential: response.credential
+            })
+        })
+        .then(async response => {
+            const data = await response.json();
 
             if (!response.ok || !data.ok) {
+                throw new Error(data.error || "Google sign-in failed");
+            }
 
-                if (
-                    data.position &&
-                    data.bonusStars
-                ) {
+            status.textContent = "🎉 You're in! Your early access has been secured.";
 
-                    showMessage(
-                        `This email is already registered. Your position is #${data.position}.`,
-                        "error"
-                    );
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 1200);
+        })
+        .catch(error => {
+            console.error(error);
+            status.textContent = error.message;
+        });
+    }
 
-                } else {
+    googleButton.addEventListener("click", async () => {
+        try {
+            if (!googleClientId) {
+                await loadConfig();
+            }
 
-                    showMessage(
-                        data.error ||
-                        "Something went wrong.",
-                        "error"
-                    );
-
-                }
-
+            if (!googleClientId) {
                 return;
             }
 
+            google.accounts.id.initialize({
+                client_id: googleClientId,
+                callback: handleGoogleCredential,
+                auto_select: false,
+                cancel_on_tap_outside: true
+            });
 
-            const registration =
-                data.registration;
-
-
-            showMessage(
-                `🎉 You're registered! Your position is #${registration.position}. Your early-access bonus is ${registration.bonusStars.toLocaleString()} Stars.`,
-                "success"
-            );
-
-
-            nameInput.disabled = true;
-            emailInput.disabled = true;
-
-            preButton.textContent =
-                "✓ You're registered";
-
-
+            /*
+             * prompt() opens the Google account chooser
+             * instead of silently selecting an account.
+             */
+            google.accounts.id.prompt();
         } catch (error) {
-
-            console.error(
-                "Pre-registration error:",
-                error
-            );
-
-            showMessage(
-                "Cannot connect to Funera AI server. Please try again.",
-                "error"
-            );
-
-        } finally {
-
-            if (
-                !nameInput.disabled
-            ) {
-                preButton.disabled =
-                    false;
-
-                preButton.textContent =
-                    "Pre-register for free";
-            }
-
+            console.error(error);
+            status.textContent = "Unable to open Google sign-in.";
         }
+    });
 
-    }
-);
+    loadConfig().catch(error => {
+        console.error(error);
+    });
 </script>
 
 </body>
