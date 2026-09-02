@@ -1,351 +1,1381 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Funera AI — Early Access</title>
-    <meta name="description" content="Join Funera AI before launch and unlock a special early-user reward.">
+  <meta charset="UTF-8">
 
-    <!-- Google Sign-In -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            background: linear-gradient(135deg, #090b18, #11152c);
-        }
 
-        .container {
-            width: min(1100px, calc(100% - 40px));
-            margin: auto;
-        }
+  <title>Funera AI — Скоро запуск</title>
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 24px 0;
-        }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-        }
 
-        .logo span {
-            color: #8b7cff;
-        }
+  <meta name="description"
 
-        .hero {
-            text-align: center;
-            padding: 80px 0 70px;
-        }
+        content="Funera AI — запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
 
-        .badge {
-            display: inline-block;
-            padding: 9px 16px;
-            border-radius: 999px;
-            background: rgba(108, 92, 231, .18);
-            border: 1px solid rgba(139, 124, 255, .35);
-            color: #c4bcff;
-            margin-bottom: 22px;
-        }
 
-        h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.05;
-            margin: 0 0 22px;
-        }
 
-        h1 span {
-            background: linear-gradient(90deg, #8b7cff, #00cec9);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+  <!-- Telegram / соцсети -->
 
-        .subtitle {
-            max-width: 680px;
-            margin: auto;
-            color: #b9bdd2;
-            font-size: 18px;
-            line-height: 1.7;
-        }
+  <meta property="og:type" content="website">
 
-        .early-card {
-            max-width: 580px;
-            margin: 45px auto 0;
-            padding: 32px;
-            border-radius: 24px;
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
-        }
+  <meta property="og:title" content="Funera AI — Скоро запуск">
 
-        .early-card h2 {
-            margin-top: 0;
-            font-size: 28px;
-        }
+  <meta property="og:description"
 
-        .early-card p {
-            color: #b9bdd2;
-            line-height: 1.6;
-        }
+        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса.">
 
-        .google-btn {
-            width: 100%;
-            border: 0;
-            border-radius: 14px;
-            padding: 16px 20px;
-            margin-top: 18px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            background: white;
-            color: #202124;
-            transition: transform .2s, opacity .2s;
-        }
+  <meta property="og:image" content="/assets/funera-logo.png">
 
-        .google-btn:hover {
-            transform: translateY(-2px);
-            opacity: .95;
-        }
+  <meta property="og:site_name" content="Funera AI">
 
-        .status {
-            min-height: 24px;
-            margin-top: 18px;
-            color: #b9bdd2;
-        }
 
-        .features {
-            padding: 50px 0 90px;
-        }
 
-        .features h2 {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 35px;
-        }
+  <!-- Иконка вкладки -->
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+  <link rel="icon" type="image/png" href="/assets/funera-logo.png">
 
-        .feature {
-            padding: 24px;
-            border-radius: 18px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.08);
-        }
+  <link rel="apple-touch-icon" href="/assets/funera-logo.png">
 
-        .feature .icon {
-            font-size: 28px;
-        }
 
-        .feature h3 {
-            margin-bottom: 10px;
-        }
 
-        .feature p {
-            margin: 0;
-            color: #aeb3c8;
-            line-height: 1.5;
-        }
+  <style>
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777d98;
-            border-top: 1px solid rgba(255,255,255,.06);
-        }
+    * {
 
-        @media (max-width: 750px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+      box-sizing: border-box;
 
-            .hero {
-                padding-top: 50px;
-            }
-        }
-    </style>
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+
+    html,
+
+    body {
+
+      width: 100%;
+
+      min-height: 100%;
+
+    }
+
+
+
+    body {
+
+      font-family:
+
+        Inter,
+
+        -apple-system,
+
+        BlinkMacSystemFont,
+
+        "Segoe UI",
+
+        Arial,
+
+        sans-serif;
+
+
+
+      background: #070712;
+
+      color: #fff;
+
+      overflow-x: hidden;
+
+    }
+
+
+
+    /* =========================
+
+       BACKGROUND
+
+    ========================= */
+
+
+
+    .background {
+
+      position: fixed;
+
+      inset: 0;
+
+      overflow: hidden;
+
+      z-index: -5;
+
+      background:
+
+        radial-gradient(
+
+          circle at 15% 15%,
+
+          rgba(108, 92, 231, .24),
+
+          transparent 32%
+
+        ),
+
+        radial-gradient(
+
+          circle at 85% 80%,
+
+          rgba(0, 206, 201, .18),
+
+          transparent 34%
+
+        ),
+
+        linear-gradient(
+
+          135deg,
+
+          #080817,
+
+          #0b0920,
+
+          #070712
+
+        );
+
+    }
+
+
+
+    .orb {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(90px);
+
+      opacity: .22;
+
+      pointer-events: none;
+
+    }
+
+
+
+    .orb.one {
+
+      width: 430px;
+
+      height: 430px;
+
+      background: #6c5ce7;
+
+      top: -180px;
+
+      left: -130px;
+
+      animation: orbOne 11s ease-in-out infinite alternate;
+
+    }
+
+
+
+    .orb.two {
+
+      width: 420px;
+
+      height: 420px;
+
+      background: #00cec9;
+
+      right: -170px;
+
+      bottom: -170px;
+
+      animation: orbTwo 12s ease-in-out infinite alternate;
+
+    }
+
+
+
+    .orb.three {
+
+      width: 250px;
+
+      height: 250px;
+
+      background: #6c5ce7;
+
+      right: 25%;
+
+      top: 25%;
+
+      opacity: .08;
+
+      animation: orbThree 9s ease-in-out infinite alternate;
+
+    }
+
+
+
+    .grid {
+
+      position: absolute;
+
+      inset: 0;
+
+
+
+      background-image:
+
+        linear-gradient(
+
+          rgba(255,255,255,.025) 1px,
+
+          transparent 1px
+
+        ),
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(255,255,255,.025) 1px,
+
+          transparent 1px
+
+        );
+
+
+
+      background-size: 50px 50px;
+
+      mask-image: linear-gradient(
+
+        to bottom,
+
+        transparent,
+
+        black 20%,
+
+        black 80%,
+
+        transparent
+
+      );
+
+
+
+      opacity: .45;
+
+    }
+
+
+
+    /* =========================
+
+       HEADER
+
+    ========================= */
+
+
+
+    header {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      z-index: 20;
+
+
+
+      height: 76px;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+
+
+      padding: 0 7%;
+
+
+
+      background: rgba(7, 7, 18, .55);
+
+      border-bottom: 1px solid rgba(255,255,255,.07);
+
+
+
+      backdrop-filter: blur(18px);
+
+      -webkit-backdrop-filter: blur(18px);
+
+    }
+
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      font-size: 21px;
+
+      letter-spacing: -.5px;
+
+    }
+
+
+
+    .brand-logo {
+
+      width: 40px;
+
+      height: 40px;
+
+
+
+      object-fit: contain;
+
+
+
+      border-radius: 12px;
+
+
+
+      box-shadow:
+
+        0 0 25px rgba(108,92,231,.3);
+
+
+
+      animation: brandFloat 4s ease-in-out infinite;
+
+    }
+
+
+
+    .nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+    }
+
+
+
+    .nav a {
+
+      color: rgba(255,255,255,.65);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: .25s ease;
+
+    }
+
+
+
+    .nav a:hover {
+
+      color: #fff;
+
+    }
+
+
+
+    .nav-button {
+
+      padding: 10px 17px;
+
+      border-radius: 12px;
+
+
+
+      background:
+
+        linear-gradient(
+
+          135deg,
+
+          #6c5ce7,
+
+          #00a9a4
+
+        );
+
+
+
+      color: #fff !important;
+
+      font-weight: 700;
+
+
+
+      box-shadow:
+
+        0 8px 25px rgba(108,92,231,.2);
+
+    }
+
+
+
+    /* =========================
+
+       MAIN
+
+    ========================= */
+
+
+
+    main {
+
+      min-height: 100vh;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      padding:
+
+        120px 20px
+
+        70px;
+
+    }
+
+
+
+    .content {
+
+      width: min(760px, 100%);
+
+      text-align: center;
+
+
+
+      animation: contentIn 1s ease both;
+
+    }
+
+
+
+    /* =========================
+
+       LOGO
+
+    ========================= */
+
+
+
+    .logo-box {
+
+      width: 94px;
+
+      height: 94px;
+
+
+
+      margin: 0 auto 25px;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      border-radius: 27px;
+
+
+
+      background:
+
+        linear-gradient(
+
+          145deg,
+
+          rgba(108,92,231,.18),
+
+          rgba(0,206,201,.08)
+
+        );
+
+
+
+      border: 1px solid rgba(255,255,255,.11);
+
+
+
+      box-shadow:
+
+        0 0 50px rgba(108,92,231,.22),
+
+        inset 0 0 30px rgba(255,255,255,.025);
+
+
+
+      backdrop-filter: blur(15px);
+
+
+
+      animation: logoFloat 4s ease-in-out infinite;
+
+    }
+
+
+
+    .main-logo {
+
+      width: 66px;
+
+      height: 66px;
+
+      object-fit: contain;
+
+    }
+
+
+
+    /* =========================
+
+       BADGE
+
+    ========================= */
+
+
+
+    .badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+
+
+      padding: 9px 16px;
+
+
+
+      border-radius: 999px;
+
+
+
+      background: rgba(108,92,231,.10);
+
+      border: 1px solid rgba(108,92,231,.25);
+
+
+
+      color: #bdb6ff;
+
+
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+
+
+      box-shadow:
+
+        0 0 25px rgba(108,92,231,.08);
+
+    }
+
+
+
+    .dot {
+
+      width: 8px;
+
+      height: 8px;
+
+
+
+      border-radius: 50%;
+
+
+
+      background: #6c5ce7;
+
+
+
+      box-shadow:
+
+        0 0 12px #6c5ce7;
+
+
+
+      animation: pulse 1.8s ease-in-out infinite;
+
+    }
+
+
+
+    /* =========================
+
+       TITLE
+
+    ========================= */
+
+
+
+    h1 {
+
+      margin-top: 25px;
+
+
+
+      font-size:
+
+        clamp(43px, 8vw, 78px);
+
+
+
+      line-height: .98;
+
+
+
+      letter-spacing: -3px;
+
+
+
+      font-weight: 850;
+
+    }
+
+
+
+    .gradient {
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          #8c7fff,
+
+          #6c5ce7,
+
+          #00cec9
+
+        );
+
+
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+
+
+      color: transparent;
+
+
+
+      background-size: 200% auto;
+
+
+
+      animation: gradientMove 5s linear infinite;
+
+    }
+
+
+
+    /* =========================
+
+       TEXT
+
+    ========================= */
+
+
+
+    .description {
+
+      max-width: 650px;
+
+
+
+      margin: 26px auto 0;
+
+
+
+      color: rgba(255,255,255,.73);
+
+
+
+      font-size: 18px;
+
+
+
+      line-height: 1.7;
+
+    }
+
+
+
+    .description strong {
+
+      color: #fff;
+
+    }
+
+
+
+    .sub-description {
+
+      max-width: 600px;
+
+
+
+      margin: 14px auto 0;
+
+
+
+      color: rgba(255,255,255,.43);
+
+
+
+      font-size: 14px;
+
+
+
+      line-height: 1.65;
+
+    }
+
+
+
+    /* =========================
+
+       NOTICE
+
+    ========================= */
+
+
+
+    .notice {
+
+      width: min(620px, 100%);
+
+
+
+      margin: 30px auto 0;
+
+
+
+      padding: 17px 20px;
+
+
+
+      border-radius: 18px;
+
+
+
+      background:
+
+        rgba(255,255,255,.045);
+
+
+
+      border: 1px solid
+
+        rgba(255,255,255,.085);
+
+
+
+      color: rgba(255,255,255,.76);
+
+
+
+      font-size: 14px;
+
+
+
+      line-height: 1.55;
+
+
+
+      box-shadow:
+
+        0 15px 50px rgba(0,0,0,.12);
+
+
+
+      backdrop-filter: blur(14px);
+
+    }
+
+
+
+    /* =========================
+
+       FOOTER
+
+    ========================= */
+
+
+
+    footer {
+
+      position: fixed;
+
+      bottom: 18px;
+
+      left: 0;
+
+      right: 0;
+
+
+
+      text-align: center;
+
+
+
+      color: rgba(255,255,255,.28);
+
+
+
+      font-size: 12px;
+
+
+
+      pointer-events: none;
+
+    }
+
+
+
+    /* =========================
+
+       ANIMATIONS
+
+    ========================= */
+
+
+
+    @keyframes contentIn {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+      }
+
+
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+
+
+    @keyframes logoFloat {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+      }
+
+
+
+      50% {
+
+        transform: translateY(-8px);
+
+      }
+
+    }
+
+
+
+    @keyframes brandFloat {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+      }
+
+
+
+      50% {
+
+        transform: translateY(-2px);
+
+      }
+
+    }
+
+
+
+    @keyframes pulse {
+
+      0%, 100% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+      }
+
+
+
+      50% {
+
+        transform: scale(.65);
+
+        opacity: .45;
+
+      }
+
+    }
+
+
+
+    @keyframes gradientMove {
+
+      0% {
+
+        background-position: 0% center;
+
+      }
+
+
+
+      100% {
+
+        background-position: 200% center;
+
+      }
+
+    }
+
+
+
+    @keyframes orbOne {
+
+      from {
+
+        transform: translate(0,0);
+
+      }
+
+
+
+      to {
+
+        transform: translate(130px,90px);
+
+      }
+
+    }
+
+
+
+    @keyframes orbTwo {
+
+      from {
+
+        transform: translate(0,0);
+
+      }
+
+
+
+      to {
+
+        transform: translate(-120px,-80px);
+
+      }
+
+    }
+
+
+
+    @keyframes orbThree {
+
+      from {
+
+        transform: translate(0,0);
+
+      }
+
+
+
+      to {
+
+        transform: translate(-100px,80px);
+
+      }
+
+    }
+
+
+
+    /* =========================
+
+       MOBILE
+
+    ========================= */
+
+
+
+    @media (max-width: 700px) {
+
+
+
+      header {
+
+        height: 68px;
+
+        padding: 0 18px;
+
+      }
+
+
+
+      .brand {
+
+        font-size: 18px;
+
+      }
+
+
+
+      .brand-logo {
+
+        width: 34px;
+
+        height: 34px;
+
+      }
+
+
+
+      .nav {
+
+        gap: 10px;
+
+      }
+
+
+
+      .nav a:not(.nav-button) {
+
+        display: none;
+
+      }
+
+
+
+      .nav-button {
+
+        padding: 9px 13px;
+
+        font-size: 12px;
+
+      }
+
+
+
+      main {
+
+        padding-top: 100px;
+
+      }
+
+
+
+      .logo-box {
+
+        width: 80px;
+
+        height: 80px;
+
+        border-radius: 23px;
+
+      }
+
+
+
+      .main-logo {
+
+        width: 56px;
+
+        height: 56px;
+
+      }
+
+
+
+      h1 {
+
+        letter-spacing: -2px;
+
+      }
+
+
+
+      .description {
+
+        font-size: 16px;
+
+      }
+
+
+
+      .sub-description {
+
+        font-size: 13px;
+
+      }
+
+
+
+      .notice {
+
+        font-size: 13px;
+
+      }
+
+
+
+      footer {
+
+        bottom: 10px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 
 <body>
 
-<div class="container">
-    <nav>
-        <div class="logo">Funera <span>AI</span></div>
+
+
+  <!-- Анимированный фон -->
+
+  <div class="background">
+
+    <div class="grid"></div>
+
+
+
+    <div class="orb one"></div>
+
+    <div class="orb two"></div>
+
+    <div class="orb three"></div>
+
+  </div>
+
+
+
+  <!-- Верхняя панель -->
+
+  <header>
+
+
+
+    <a href="/" class="brand">
+
+      <img
+
+        src="/assets/funera-logo.png"
+
+        alt="Funera AI"
+
+        class="brand-logo"
+
+      >
+
+
+
+      <span>Funera AI</span>
+
+    </a>
+
+
+
+    <nav class="nav">
+
+      <a href="/">Главная</a>
+
+      <a href="/about.html">О нас</a>
+
+      <a href="/login.html" class="nav-button">Войти</a>
+
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="badge">🚀 EARLY ACCESS</div>
 
-            <h1>Your language journey<br>starts with <span>Funera AI</span></h1>
 
-            <p class="subtitle">
-                AI-powered learning, vocabulary, IELTS & CEFR practice
-                and writing tools — all in one place.
-            </p>
+  </header>
 
-            <div class="early-card">
-                <h2>🎁 Something special is waiting</h2>
 
-                <p>
-                    Join Funera AI before launch and secure an exclusive
-                    early-user reward.
-                </p>
 
-                <p>
-                    <strong>The earlier you join, the more special your journey begins.</strong>
-                </p>
+  <!-- Главный экран -->
 
-                <button class="google-btn" id="googleLogin">
-                    Continue with Google
-                </button>
+  <main>
 
-                <div class="status" id="status"></div>
-            </div>
-        </section>
 
-        <section class="features">
-            <h2>Everything for your language journey</h2>
 
-            <div class="grid">
-                <div class="feature">
-                    <div class="icon">🤖</div>
-                    <h3>AI Learning</h3>
-                    <p>Intelligent explanations, exercises and personalized practice.</p>
-                </div>
+    <div class="content">
 
-                <div class="feature">
-                    <div class="icon">📚</div>
-                    <h3>Vocabulary</h3>
-                    <p>Learn words with examples, memory techniques and smart review.</p>
-                </div>
 
-                <div class="feature">
-                    <div class="icon">🎯</div>
-                    <h3>IELTS & CEFR</h3>
-                    <p>Practice realistic exam-style tasks and track your progress.</p>
-                </div>
 
-                <div class="feature">
-                    <div class="icon">✍️</div>
-                    <h3>AI Writer</h3>
-                    <p>Create, improve and practice writing with AI assistance.</p>
-                </div>
+      <div class="logo-box">
 
-                <div class="feature">
-                    <div class="icon">⭐</div>
-                    <h3>Stars</h3>
-                    <p>Earn rewards as you learn and progress through Funera AI.</p>
-                </div>
+        <img
 
-                <div class="feature">
-                    <div class="icon">🚀</div>
-                    <h3>Built for learners</h3>
-                    <p>One platform for practice, preparation and real progress.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-</div>
+          src="/assets/funera-logo.png"
 
-<footer>
-    © 2026 Funera AI. All rights reserved.
-</footer>
+          alt="Funera AI"
 
-<script>
-    const status = document.getElementById("status");
-    const googleButton = document.getElementById("googleLogin");
+          class="main-logo"
 
-    let googleClientId = "";
+        >
 
-    async function loadConfig() {
-        const response = await fetch("/api/config");
-        const data = await response.json();
+      </div>
 
-        googleClientId = data.googleClientId || "";
 
-        if (!googleClientId) {
-            status.textContent = "Google sign-in is not configured yet.";
-        }
-    }
 
-    function handleGoogleCredential(response) {
-        status.textContent = "Signing you in...";
+      <div class="badge">
 
-        fetch("/api/auth/google", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            credentials: "include",
-            body: JSON.stringify({
-                credential: response.credential
-            })
-        })
-        .then(async response => {
-            const data = await response.json();
+        <span class="dot"></span>
 
-            if (!response.ok || !data.ok) {
-                throw new Error(data.error || "Google sign-in failed");
-            }
+        Подготовка к запуску
 
-            status.textContent = "🎉 You're in! Your early access has been secured.";
+      </div>
 
-            setTimeout(() => {
-                window.location.href = "/";
-            }, 1200);
-        })
-        .catch(error => {
-            console.error(error);
-            status.textContent = error.message;
-        });
-    }
 
-    googleButton.addEventListener("click", async () => {
-        try {
-            if (!googleClientId) {
-                await loadConfig();
-            }
 
-            if (!googleClientId) {
-                return;
-            }
+      <h1>
 
-            google.accounts.id.initialize({
-                client_id: googleClientId,
-                callback: handleGoogleCredential,
-                auto_select: false,
-                cancel_on_tap_outside: true
-            });
+        Funera AI<br>
 
-            /*
-             * prompt() opens the Google account chooser
-             * instead of silently selecting an account.
-             */
-            google.accounts.id.prompt();
-        } catch (error) {
-            console.error(error);
-            status.textContent = "Unable to open Google sign-in.";
-        }
-    });
+        <span class="gradient">уже почти готов</span>
 
-    loadConfig().catch(error => {
-        console.error(error);
-    });
-</script>
+      </h1>
+
+
+
+      <p class="description">
+
+        Запуск временно задерживается из-за необходимости завершить
+
+        <strong>юридическое оформление сервиса</strong> и проверку
+
+        соответствия требованиям законодательства.
+
+      </p>
+
+
+
+      <p class="sub-description">
+
+        Мы завершаем необходимые документы, условия использования
+
+        и другие юридические вопросы перед официальным запуском.
+
+      </p>
+
+
+
+      <div class="notice">
+
+        🚀 Мы не хотим запускать Funera AI в спешке.
+
+        Сначала убедимся, что всё готово правильно —
+
+        и только после этого откроем сервис для пользователей.
+
+        <br><br>
+
+        <strong>Спасибо за понимание и терпение ❤️</strong>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer>
+
+    © 2026 Funera AI
+
+  </footer>
+
+
 
 </body>
+
 </html>
