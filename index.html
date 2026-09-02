@@ -3,1157 +3,586 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <!-- =========================
-       PAGE
-  ========================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Funera AI — Скоро запуск</title>
 
-  <meta
-    name="description"
-    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства."
-  >
+  <meta name="description"
+        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
 
-  <!-- =========================
-       TELEGRAM / OPEN GRAPH
-  ========================== -->
-
+  <!-- Open Graph / Telegram -->
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Funera AI — Скоро запуск">
+  <meta property="og:description"
+        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
 
-  <meta
-    property="og:title"
-    content="Funera AI — Скоро запуск"
-  >
+  <meta property="og:image"
+        content="https://m3rashteam-prog.github.io/flunera-countdown/assets/funera-preview.png">
 
-  <meta
-    property="og:description"
-    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства."
-  >
+  <meta property="og:image:secure_url"
+        content="https://m3rashteam-prog.github.io/flunera-countdown/assets/funera-preview.png">
 
-  <!--
-    ВАЖНО:
-    Telegram берёт превью именно отсюда.
-    Картинка должна быть доступна по этому адресу.
-  -->
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Funera AI">
 
-  <meta
-    property="og:image"
-    content="/funera-preview.png"
-  >
+  <meta property="og:url"
+        content="https://m3rashteam-prog.github.io/flunera-countdown/">
 
-  <meta
-    property="og:image:width"
-    content="1200"
-  >
+  <meta property="og:site_name" content="Funera AI">
+  <meta property="og:locale" content="ru_RU">
 
-  <meta
-    property="og:image:height"
-    content="630"
-  >
+  <!-- Twitter / другие превью -->
+  <meta name="twitter:card" content="summary_large_image">
 
-  <meta
-    property="og:site_name"
-    content="Funera AI"
-  >
+  <meta name="twitter:title"
+        content="Funera AI — Скоро запуск">
 
-  <meta
-    property="og:locale"
-    content="ru_RU"
-  >
+  <meta name="twitter:description"
+        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса.">
 
-  <!-- =========================
-       TWITTER / OTHER PREVIEWS
-  ========================== -->
+  <meta name="twitter:image"
+        content="https://m3rashteam-prog.github.io/flunera-countdown/assets/funera-preview.png">
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  >
+  <meta name="twitter:image:alt" content="Funera AI">
 
-  <meta
-    name="twitter:title"
-    content="Funera AI — Скоро запуск"
-  >
+  <!-- Canonical -->
+  <link rel="canonical"
+        href="https://m3rashteam-prog.github.io/flunera-countdown/">
 
-  <meta
-    name="twitter:description"
-    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса."
-  >
+  <!-- Logo -->
+  <link rel="icon"
+        type="image/svg+xml"
+        href="assets/logo.svg">
 
-  <meta
-    name="twitter:image"
-    content="/funera-preview.png"
-  >
-
-  <!-- =========================
-       FAVICON
-  ==========================
-
-  Логотип ниже встроен прямо в HTML.
-  Поэтому отдельный logo.png для вкладки
-  не требуется.
-
-  -->
-
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%239b8fff'/%3E%3Cstop offset='.55' stop-color='%236c5ce7'/%3E%3Cstop offset='1' stop-color='%2300cec9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230b0a20'/%3E%3Cpath d='M72 17C88 25 94 43 88 59C82 76 66 87 48 87C31 87 16 77 11 62C7 49 11 34 21 24' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M34 70V31H66M34 47H59' fill='none' stroke='url(%23g)' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='74' cy='27' r='5' fill='%2300cec9'/%3E%3C/svg%3E"
-  >
+  <link rel="apple-touch-icon"
+        href="assets/funera-logo.png">
 
   <style>
-
-    /* =========================
-       RESET
-    ========================== */
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      min-height: 100vh;
+      overflow-x: hidden;
       font-family:
         Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Roboto,
         Arial,
         sans-serif;
-
-      background: #070714;
-      color: #ffffff;
-
-      overflow-x: hidden;
-    }
-
-
-    /* =========================
-       BACKGROUND
-    ========================== */
-
-    .background {
-      position: fixed;
-      inset: 0;
-
-      z-index: -10;
-
-      overflow: hidden;
-
+      color: #fff;
       background:
         radial-gradient(
-          circle at 15% 15%,
-          rgba(108, 92, 231, .30),
-          transparent 37%
+          circle at 20% 20%,
+          rgba(108, 92, 231, 0.25),
+          transparent 35%
         ),
-
         radial-gradient(
-          circle at 85% 85%,
-          rgba(0, 206, 201, .21),
-          transparent 38%
+          circle at 80% 70%,
+          rgba(0, 206, 201, 0.16),
+          transparent 35%
         ),
-
-        linear-gradient(
-          135deg,
-          #11102d 0%,
-          #080817 55%,
-          #061c25 100%
-        );
+        #080812;
     }
 
-
-    /* сетка */
-
-    .grid {
-      position: absolute;
-      inset: -100px;
-
-      opacity: .27;
-
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
       background-image:
         linear-gradient(
-          rgba(255,255,255,.035) 1px,
+          rgba(255,255,255,0.025) 1px,
           transparent 1px
         ),
-
         linear-gradient(
           90deg,
-          rgba(255,255,255,.035) 1px,
+          rgba(255,255,255,0.025) 1px,
           transparent 1px
         );
-
-      background-size: 55px 55px;
-
-      transform:
-        perspective(500px)
-        rotateX(55deg)
-        scale(1.5);
-
-      animation:
-        gridMove 18s linear infinite;
+      background-size: 50px 50px;
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+      );
+      z-index: 0;
     }
-
-
-    /* свечение */
 
     .glow {
-      position: absolute;
-
+      position: fixed;
       border-radius: 50%;
-
       filter: blur(100px);
-
       pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
     }
 
-
-    .glow-purple {
-      width: 450px;
-      height: 450px;
-
-      left: -190px;
-      top: 70px;
-
+    .glow.one {
+      width: 300px;
+      height: 300px;
       background: #6c5ce7;
-
-      opacity: .23;
-
-      animation:
-        purpleMove 10s ease-in-out infinite alternate;
+      top: -100px;
+      left: -100px;
+      animation: floatOne 8s ease-in-out infinite;
     }
 
-
-    .glow-cyan {
-      width: 450px;
-      height: 450px;
-
-      right: -190px;
-      bottom: -160px;
-
+    .glow.two {
+      width: 260px;
+      height: 260px;
       background: #00cec9;
-
-      opacity: .20;
-
-      animation:
-        cyanMove 12s ease-in-out infinite alternate;
+      right: -100px;
+      bottom: -80px;
+      animation: floatTwo 10s ease-in-out infinite;
     }
 
+    @keyframes floatOne {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
 
-    /* =========================
-       PARTICLES
-    ========================== */
+      50% {
+        transform: translate(60px, 40px);
+      }
+    }
+
+    @keyframes floatTwo {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-50px, -40px);
+      }
+    }
 
     .particles {
-      position: absolute;
+      position: fixed;
       inset: 0;
-
       pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
     }
-
 
     .particle {
       position: absolute;
-
       width: 3px;
       height: 3px;
-
       border-radius: 50%;
-
-      background: #ffffff;
-
-      opacity: .35;
-
-      animation:
-        particleMove 7s linear infinite;
+      background: rgba(255,255,255,0.6);
+      animation: particleFloat linear infinite;
     }
 
+    @keyframes particleFloat {
+      from {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
 
-    .p1 {
-      left: 8%;
-      top: 25%;
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
     }
-
-    .p2 {
-      left: 19%;
-      top: 70%;
-      animation-delay: 1s;
-    }
-
-    .p3 {
-      left: 34%;
-      top: 18%;
-      animation-delay: 2s;
-    }
-
-    .p4 {
-      left: 50%;
-      top: 78%;
-      animation-delay: 3s;
-    }
-
-    .p5 {
-      left: 67%;
-      top: 25%;
-      animation-delay: 1.5s;
-    }
-
-    .p6 {
-      left: 80%;
-      top: 62%;
-      animation-delay: 4s;
-    }
-
-    .p7 {
-      left: 91%;
-      top: 18%;
-      animation-delay: 2.5s;
-    }
-
-    .p8 {
-      left: 57%;
-      top: 45%;
-      animation-delay: 5s;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================== */
 
     header {
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      right: 0;
-
-      height: 76px;
-
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding: 22px 6%;
       display: flex;
       align-items: center;
-
-      padding: 0 7%;
-
-      z-index: 50;
-
-      background:
-        rgba(7,7,20,.62);
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
-
-      backdrop-filter:
-        blur(18px);
-
-      -webkit-backdrop-filter:
-        blur(18px);
+      justify-content: space-between;
     }
-
 
     .brand {
       display: flex;
-
       align-items: center;
-
       gap: 12px;
-
-      color: #ffffff;
-
       text-decoration: none;
+      color: #fff;
+    }
 
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 0 12px rgba(108,92,231,0.6));
+    }
+
+    .brand-name {
       font-size: 21px;
-
       font-weight: 800;
-
-      letter-spacing: -.5px;
+      letter-spacing: -0.5px;
     }
 
-
-    /* =========================
-       LOGO
-    ========================== */
-
-    .logo {
-      width: 45px;
-      height: 45px;
-
-      position: relative;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 14px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(108,92,231,.24),
-          rgba(0,206,201,.08)
-        );
-
-      border:
-        1px solid
-        rgba(255,255,255,.12);
-
-      box-shadow:
-        0 0 28px
-        rgba(108,92,231,.34),
-
-        inset 0 0 18px
-        rgba(255,255,255,.04);
-
-      animation:
-        logoFloat 4s ease-in-out infinite;
+    .brand-name span {
+      color: #8b7cff;
     }
-
-
-    .logo-glow {
-      position: absolute;
-
-      inset: -8px;
-
-      border-radius: 18px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(108,92,231,.24),
-          rgba(0,206,201,.14)
-        );
-
-      filter: blur(11px);
-
-      z-index: -1;
-    }
-
-
-    .logo svg {
-      width: 35px;
-      height: 35px;
-
-      overflow: visible;
-    }
-
-
-    /* =========================
-       MAIN
-    ========================== */
 
     main {
-      min-height: 100vh;
-
+      position: relative;
+      z-index: 2;
+      min-height: calc(100vh - 90px);
       display: flex;
-
       align-items: center;
       justify-content: center;
-
-      padding:
-        115px 20px
-        70px;
-
-      text-align: center;
+      padding: 50px 20px 80px;
     }
 
-
-    .content {
+    .hero {
       width: 100%;
-
-      max-width: 760px;
-
-      animation:
-        pageIn .9s ease both;
+      max-width: 900px;
+      text-align: center;
+      animation: heroAppear 1s ease forwards;
     }
 
+    @keyframes heroAppear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-    /* =========================
-       STATUS
-    ========================== */
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    .status {
+    .badge {
       display: inline-flex;
-
       align-items: center;
-
-      gap: 10px;
-
-      padding:
-        10px 19px;
-
+      gap: 9px;
+      padding: 9px 16px;
       border-radius: 999px;
-
-      color: #c9c2ff;
-
-      background:
-        rgba(108,92,231,.10);
-
-      border:
-        1px solid
-        rgba(108,92,231,.28);
-
-      font-size: 15px;
-
+      border: 1px solid rgba(139,124,255,0.35);
+      background: rgba(108,92,231,0.1);
+      color: #c4bcff;
+      font-size: 13px;
       font-weight: 700;
-    }
-
-
-    .status-dot {
-      width: 9px;
-      height: 9px;
-
-      border-radius: 50%;
-
-      background: #6c5ce7;
-
+      margin-bottom: 25px;
       box-shadow:
-        0 0 14px
-        #6c5ce7;
-
-      animation:
-        pulse 1.7s ease-in-out infinite;
+        0 0 30px rgba(108,92,231,0.12);
     }
 
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00cec9;
+      box-shadow:
+        0 0 12px #00cec9;
+      animation: pulse 1.8s infinite;
+    }
 
-    /* =========================
-       TITLE
-    ========================== */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+    }
 
     h1 {
-      margin-top: 28px;
-
-      font-size:
-        clamp(
-          45px,
-          8vw,
-          78px
-        );
-
-      line-height: 1.02;
-
-      letter-spacing: -3px;
-
-      font-weight: 850;
-    }
-
-
-    .gradient {
-      background:
-        linear-gradient(
-          90deg,
-          #9b8fff,
-          #6c5ce7,
-          #557dff,
-          #00cec9
-        );
-
-      background-size: 250% auto;
-
+      font-size: clamp(48px, 9vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      font-weight: 900;
+      margin-bottom: 25px;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #bcb5ff 45%,
+        #00cec9 100%
+      );
       -webkit-background-clip: text;
-
       background-clip: text;
-
       color: transparent;
-
-      animation:
-        gradientMove 5s linear infinite;
+      text-shadow:
+        0 0 50px rgba(108,92,231,0.12);
     }
 
-
-    /* =========================
-       TEXT
-    ========================== */
-
-    .description {
-      max-width: 690px;
-
-      margin:
-        28px auto 0;
-
-      color:
-        rgba(255,255,255,.77);
-
-      font-size: 19px;
-
-      line-height: 1.75;
-    }
-
-
-    .description strong {
-      color: #ffffff;
-    }
-
-
-    .sub-description {
-      max-width: 630px;
-
-      margin:
-        17px auto 0;
-
-      color:
-        rgba(255,255,255,.44);
-
-      font-size: 16px;
-
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto 35px;
+      color: rgba(255,255,255,0.68);
+      font-size: 18px;
       line-height: 1.7;
     }
 
-
-    /* =========================
-       CARD
-    ========================== */
-
     .card {
-      max-width: 650px;
-
-      margin:
-        32px auto 0;
-
-      padding:
-        20px 23px;
-
-      border-radius: 22px;
-
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.1);
       background:
-        rgba(255,255,255,.045);
-
-      border:
-        1px solid
-        rgba(255,255,255,.09);
-
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.07),
+          rgba(255,255,255,0.025)
+        );
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.17),
+        0 25px 80px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
 
-        inset 0 0 25px
-        rgba(255,255,255,.015);
-
-      backdrop-filter:
-        blur(15px);
-
-      color:
-        rgba(255,255,255,.68);
-
+    .card-title {
       font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #8b7cff;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
 
+    .card-text {
+      color: rgba(255,255,255,0.66);
       line-height: 1.65;
+      font-size: 15px;
     }
 
-
-    .card strong {
-      color: #ffffff;
+    .features {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
 
+    .feature {
+      padding: 18px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.035);
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    .feature:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108,92,231,0.35);
+      background: rgba(108,92,231,0.07);
+    }
+
+    .feature-icon {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .feature-title {
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .feature-text {
+      color: rgba(255,255,255,0.48);
+      font-size: 11px;
+      line-height: 1.5;
+    }
 
     footer {
-      position: fixed;
-
-      left: 0;
-      right: 0;
-
-      bottom: 14px;
-
+      position: relative;
+      z-index: 3;
       text-align: center;
-
-      color:
-        rgba(255,255,255,.22);
-
-      font-size: 11px;
+      padding: 20px;
+      color: rgba(255,255,255,0.3);
+      font-size: 12px;
     }
 
-
-    /* =========================
-       ANIMATIONS
-    ========================== */
-
-    @keyframes pageIn {
-
-      from {
-        opacity: 0;
-
-        transform:
-          translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
-
-    }
-
-
-    @keyframes logoFloat {
-
-      0%,
-      100% {
-        transform:
-          translateY(0);
-      }
-
-      50% {
-        transform:
-          translateY(-5px);
-      }
-
-    }
-
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: .4;
-        transform: scale(.65);
-      }
-
-    }
-
-
-    @keyframes gradientMove {
-
-      0% {
-        background-position:
-          0% center;
-      }
-
-      100% {
-        background-position:
-          250% center;
-      }
-
-    }
-
-
-    @keyframes gridMove {
-
-      from {
-        transform:
-          perspective(500px)
-          rotateX(55deg)
-          translateY(0)
-          scale(1.5);
-      }
-
-      to {
-        transform:
-          perspective(500px)
-          rotateX(55deg)
-          translateY(55px)
-          scale(1.5);
-      }
-
-    }
-
-
-    @keyframes purpleMove {
-
-      from {
-        transform:
-          translate(0,0);
-      }
-
-      to {
-        transform:
-          translate(120px,80px);
-      }
-
-    }
-
-
-    @keyframes cyanMove {
-
-      from {
-        transform:
-          translate(0,0);
-      }
-
-      to {
-        transform:
-          translate(-120px,-80px);
-      }
-
-    }
-
-
-    @keyframes particleMove {
-
-      0% {
-        transform:
-          translateY(30px);
-
-        opacity: 0;
-      }
-
-      20% {
-        opacity: .4;
-      }
-
-      80% {
-        opacity: .25;
-      }
-
-      100% {
-        transform:
-          translateY(-120px);
-
-        opacity: 0;
-      }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 600px) {
-
+    @media (max-width: 700px) {
       header {
-        height: 68px;
-
-        padding:
-          0 17px;
+        padding: 18px 20px;
       }
 
-
-      .brand {
-        font-size: 19px;
+      .brand-name {
+        font-size: 18px;
       }
 
-
-      .logo {
-        width: 42px;
-        height: 42px;
+      .brand img {
+        width: 36px;
+        height: 36px;
       }
-
-
-      .logo svg {
-        width: 33px;
-        height: 33px;
-      }
-
 
       main {
-        padding:
-          100px 18px
-          60px;
+        padding-top: 35px;
       }
-
-
-      .status {
-        font-size: 14px;
-
-        padding:
-          10px 16px;
-      }
-
 
       h1 {
-        font-size:
-          clamp(
-            42px,
-            12vw,
-            61px
-          );
-
-        letter-spacing:
-          -2px;
+        letter-spacing: -2.5px;
       }
 
-
-      .description {
-        font-size: 17px;
-
-        line-height: 1.7;
+      .subtitle {
+        font-size: 16px;
       }
-
-
-      .sub-description {
-        font-size: 14px;
-      }
-
 
       .card {
-        padding:
-          17px;
-
-        font-size: 13px;
+        padding: 24px 18px;
+        border-radius: 22px;
       }
 
+      .features {
+        grid-template-columns: 1fr;
+      }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
-
 <body>
 
+  <div class="glow one"></div>
+  <div class="glow two"></div>
 
-  <!-- =========================
-       BACKGROUND
-  ========================== -->
-
-  <div class="background">
-
-    <div class="grid"></div>
-
-    <div class="glow glow-purple"></div>
-
-    <div class="glow glow-cyan"></div>
-
-
-    <div class="particles">
-
-      <span class="particle p1"></span>
-      <span class="particle p2"></span>
-      <span class="particle p3"></span>
-      <span class="particle p4"></span>
-      <span class="particle p5"></span>
-      <span class="particle p6"></span>
-      <span class="particle p7"></span>
-      <span class="particle p8"></span>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <div class="particles" id="particles"></div>
 
   <header>
-
-    <a
-      href="/"
-      class="brand"
-      aria-label="Funera AI"
-    >
-
-      <div class="logo">
-
-        <div class="logo-glow"></div>
-
-
-        <!--
-          ВСТРОЕННЫЙ ЛОГОТИП
-          Никаких PNG/JPG для самого сайта
-        -->
-
-        <svg
-          viewBox="0 0 100 100"
-          fill="none"
-          aria-hidden="true"
-        >
-
-          <defs>
-
-            <linearGradient
-              id="funeraGradient"
-              x1="10"
-              y1="10"
-              x2="90"
-              y2="90"
-            >
-
-              <stop
-                offset="0%"
-                stop-color="#9b8fff"
-              />
-
-              <stop
-                offset="52%"
-                stop-color="#6c5ce7"
-              />
-
-              <stop
-                offset="100%"
-                stop-color="#00cec9"
-              />
-
-            </linearGradient>
-
-          </defs>
-
-
-          <!-- внешний символ -->
-
-          <path
-            d="
-              M72 17
-              C88 25 94 43 88 59
-              C82 76 66 87 48 87
-              C31 87 16 77 11 62
-              C7 49 11 34 21 24
-            "
-            stroke="url(#funeraGradient)"
-            stroke-width="8"
-            stroke-linecap="round"
-          />
-
-
-          <!-- F -->
-
-          <path
-            d="
-              M34 70
-              V31
-              H66
-
-              M34 47
-              H59
-            "
-            stroke="url(#funeraGradient)"
-            stroke-width="9"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-
-
-          <!-- AI -->
-
-          <circle
-            cx="74"
-            cy="27"
-            r="5"
-            fill="#00cec9"
-          />
-
-        </svg>
-
+    <a class="brand" href="./">
+      <img src="assets/logo.svg" alt="Funera AI">
+      <div class="brand-name">
+        Funera <span>AI</span>
       </div>
-
-
-      <span>
-        Funera AI
-      </span>
-
     </a>
-
   </header>
 
-
-  <!-- =========================
-       MAIN
-  ========================== -->
-
   <main>
+    <section class="hero">
 
-    <section class="content">
-
-
-      <!-- статус -->
-
-      <div class="status">
-
-        <span class="status-dot"></span>
-
-        Подготовка к запуску
-
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Скоро запуск
       </div>
 
+      <h1>Funera AI</h1>
 
-      <!-- заголовок -->
-
-      <h1>
-
-        Funera AI
-
-        <br>
-
-        <span class="gradient">
-          уже почти готов
-        </span>
-
-      </h1>
-
-
-      <!-- основная причина -->
-
-      <p class="description">
-
-        Запуск временно задерживается
-        из-за необходимости завершить
-
-        <strong>
-          юридическое оформление сервиса
-        </strong>
-
-        и проверку соответствия
-        требованиям законодательства.
-
+      <p class="subtitle">
+        Умный AI-сервис для работы с текстом, обучения
+        и повышения продуктивности.
+        Мы готовим запуск и хотим сделать всё правильно.
       </p>
-
-
-      <!-- дополнительная информация -->
-
-      <p class="sub-description">
-
-        Мы завершаем необходимые документы,
-        условия использования и другие юридические
-        вопросы перед официальным запуском.
-
-      </p>
-
-
-      <!-- карточка -->
 
       <div class="card">
 
-        🚀 Мы не хотим запускать Funera AI в спешке.
+        <div class="card-title">
+          Важное обновление
+        </div>
 
-        <br>
+        <div class="card-text">
+          Запуск Funera AI временно задерживается из-за
+          юридического оформления сервиса и проверки
+          соответствия требованиям законодательства.
+          Мы не хотим запускать продукт поспешно —
+          сначала всё должно быть готово правильно.
+        </div>
 
-        Сначала убедимся, что всё готово правильно —
-        и только после этого откроем сервис
-        для пользователей.
+        <div class="features">
 
-        <br><br>
+          <div class="feature">
+            <div class="feature-icon">✦</div>
+            <div class="feature-title">
+              AI
+            </div>
+            <div class="feature-text">
+              Интеллектуальные инструменты
+              для работы с текстом.
+            </div>
+          </div>
 
-        <strong>
-          Спасибо за понимание и терпение ❤️
-        </strong>
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">
+              Быстро
+            </div>
+            <div class="feature-text">
+              Удобный интерфейс и быстрый
+              доступ к функциям.
+            </div>
+          </div>
 
+          <div class="feature">
+            <div class="feature-icon">◈</div>
+            <div class="feature-title">
+              Funera AI
+            </div>
+            <div class="feature-text">
+              Новый проект, который
+              готовится к запуску.
+            </div>
+          </div>
+
+        </div>
       </div>
 
-
     </section>
-
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
   <footer>
-    © 2026 Funera AI
+    © 2026 Funera AI. Все права защищены.
   </footer>
 
+  <script>
+    const particles = document.getElementById("particles");
+
+    for (let i = 0; i < 35; i++) {
+      const particle = document.createElement("div");
+
+      particle.className = "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDuration =
+        (8 + Math.random() * 14) + "s";
+
+      particle.style.animationDelay =
+        (-Math.random() * 20) + "s";
+
+      particle.style.opacity =
+        0.2 + Math.random() * 0.6;
+
+      particle.style.transform =
+        `scale(${0.5 + Math.random()})`;
+
+      particles.appendChild(particle);
+    }
+  </script>
 
 </body>
 </html>
