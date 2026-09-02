@@ -1,1381 +1,793 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
   <title>Funera AI — Скоро запуск</title>
 
-
-
   <meta name="description"
+        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
 
-        content="Funera AI — запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
-
-
-
-  <!-- Telegram / соцсети -->
+  <!-- =========================
+       TELEGRAM / SOCIAL PREVIEW
+  ========================== -->
 
   <meta property="og:type" content="website">
-
   <meta property="og:title" content="Funera AI — Скоро запуск">
-
   <meta property="og:description"
-
-        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса.">
-
-  <meta property="og:image" content="/assets/funera-logo.png">
-
+        content="Мы почти готовы. Запуск Funera AI временно задерживается из-за юридического оформления сервиса.">
+  <meta property="og:image"
+        content="https://m3rashteam-prog.github.io/assets/funera-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
   <meta property="og:site_name" content="Funera AI">
+  <meta property="og:url"
+        content="https://m3rashteam-prog.github.io/">
 
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Funera AI — Скоро запуск">
+  <meta name="twitter:description"
+        content="Мы почти готовы. Запуск Funera AI временно задерживается из-за юридического оформления сервиса.">
+  <meta name="twitter:image"
+        content="https://m3rashteam-prog.github.io/assets/funera-preview.png">
 
+  <!-- =========================
+       BROWSER TAB LOGO
+  ========================== -->
 
-  <!-- Иконка вкладки -->
+  <link rel="icon"
+        type="image/png"
+        href="/assets/funera-logo.png">
 
-  <link rel="icon" type="image/png" href="/assets/funera-logo.png">
-
-  <link rel="apple-touch-icon" href="/assets/funera-logo.png">
-
-
+  <link rel="apple-touch-icon"
+        href="/assets/funera-logo.png">
 
   <style>
 
     * {
-
-      box-sizing: border-box;
-
       margin: 0;
-
       padding: 0;
-
+      box-sizing: border-box;
     }
 
-
-
-    html,
-
-    body {
-
-      width: 100%;
-
+    html {
       min-height: 100%;
-
     }
 
-
-
     body {
+      min-height: 100vh;
 
       font-family:
-
         Inter,
-
         -apple-system,
-
         BlinkMacSystemFont,
-
         "Segoe UI",
-
         Arial,
-
         sans-serif;
 
-
-
-      background: #070712;
-
-      color: #fff;
+      color: #ffffff;
+      background: #080817;
 
       overflow-x: hidden;
-
     }
-
 
 
     /* =========================
-
        BACKGROUND
-
-    ========================= */
-
-
+    ========================== */
 
     .background {
-
       position: fixed;
-
       inset: 0;
+
+      z-index: -10;
 
       overflow: hidden;
 
-      z-index: -5;
-
       background:
-
         radial-gradient(
-
-          circle at 15% 15%,
-
-          rgba(108, 92, 231, .24),
-
-          transparent 32%
-
+          circle at 15% 20%,
+          rgba(108, 92, 231, 0.30),
+          transparent 38%
         ),
 
         radial-gradient(
-
           circle at 85% 80%,
-
-          rgba(0, 206, 201, .18),
-
-          transparent 34%
-
+          rgba(0, 206, 201, 0.22),
+          transparent 40%
         ),
 
         linear-gradient(
-
           135deg,
-
-          #080817,
-
-          #0b0920,
-
-          #070712
-
+          #11102d 0%,
+          #09091d 55%,
+          #071c29 100%
         );
-
     }
 
 
+    /* Сетка */
 
-    .orb {
+    .grid {
+      position: absolute;
+      inset: 0;
 
+      opacity: 0.30;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 52px 52px;
+    }
+
+
+    /* Светящиеся сферы */
+
+    .glow {
       position: absolute;
 
       border-radius: 50%;
 
-      filter: blur(90px);
-
-      opacity: .22;
+      filter: blur(100px);
 
       pointer-events: none;
-
     }
 
 
-
-    .orb.one {
-
+    .glow-purple {
       width: 430px;
-
       height: 430px;
+
+      left: -180px;
+      top: 100px;
 
       background: #6c5ce7;
 
-      top: -180px;
+      opacity: 0.22;
 
-      left: -130px;
-
-      animation: orbOne 11s ease-in-out infinite alternate;
-
+      animation:
+        purpleMove 10s ease-in-out infinite alternate;
     }
 
 
+    .glow-cyan {
+      width: 430px;
+      height: 430px;
 
-    .orb.two {
-
-      width: 420px;
-
-      height: 420px;
+      right: -190px;
+      bottom: -130px;
 
       background: #00cec9;
 
-      right: -170px;
+      opacity: 0.20;
 
-      bottom: -170px;
-
-      animation: orbTwo 12s ease-in-out infinite alternate;
-
+      animation:
+        cyanMove 12s ease-in-out infinite alternate;
     }
-
-
-
-    .orb.three {
-
-      width: 250px;
-
-      height: 250px;
-
-      background: #6c5ce7;
-
-      right: 25%;
-
-      top: 25%;
-
-      opacity: .08;
-
-      animation: orbThree 9s ease-in-out infinite alternate;
-
-    }
-
-
-
-    .grid {
-
-      position: absolute;
-
-      inset: 0;
-
-
-
-      background-image:
-
-        linear-gradient(
-
-          rgba(255,255,255,.025) 1px,
-
-          transparent 1px
-
-        ),
-
-        linear-gradient(
-
-          90deg,
-
-          rgba(255,255,255,.025) 1px,
-
-          transparent 1px
-
-        );
-
-
-
-      background-size: 50px 50px;
-
-      mask-image: linear-gradient(
-
-        to bottom,
-
-        transparent,
-
-        black 20%,
-
-        black 80%,
-
-        transparent
-
-      );
-
-
-
-      opacity: .45;
-
-    }
-
 
 
     /* =========================
-
        HEADER
-
-    ========================= */
-
-
+    ========================== */
 
     header {
-
       position: fixed;
 
       top: 0;
-
       left: 0;
-
       right: 0;
 
-      z-index: 20;
-
-
+      z-index: 100;
 
       height: 76px;
 
-
-
       display: flex;
-
       align-items: center;
-
-      justify-content: space-between;
-
-
 
       padding: 0 7%;
 
+      background:
+        rgba(9, 8, 28, 0.72);
 
+      border-bottom:
+        1px solid rgba(255,255,255,0.07);
 
-      background: rgba(7, 7, 18, .55);
+      backdrop-filter:
+        blur(18px);
 
-      border-bottom: 1px solid rgba(255,255,255,.07);
-
-
-
-      backdrop-filter: blur(18px);
-
-      -webkit-backdrop-filter: blur(18px);
-
+      -webkit-backdrop-filter:
+        blur(18px);
     }
 
 
-
     .brand {
-
       display: flex;
-
       align-items: center;
 
       gap: 12px;
 
-
-
-      color: #fff;
+      color: #ffffff;
 
       text-decoration: none;
 
+      font-size: 21px;
       font-weight: 800;
 
-      font-size: 21px;
-
-      letter-spacing: -.5px;
-
+      letter-spacing: -0.5px;
     }
 
 
+    /* НОВОЕ ЛОГО */
 
     .brand-logo {
-
-      width: 40px;
-
-      height: 40px;
-
-
+      width: 45px;
+      height: 45px;
 
       object-fit: contain;
 
+      display: block;
 
-
-      border-radius: 12px;
-
-
-
-      box-shadow:
-
-        0 0 25px rgba(108,92,231,.3);
-
-
-
-      animation: brandFloat 4s ease-in-out infinite;
-
-    }
-
-
-
-    .nav {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 28px;
-
-    }
-
-
-
-    .nav a {
-
-      color: rgba(255,255,255,.65);
-
-      text-decoration: none;
-
-      font-size: 14px;
-
-      transition: .25s ease;
-
-    }
-
-
-
-    .nav a:hover {
-
-      color: #fff;
-
-    }
-
-
-
-    .nav-button {
-
-      padding: 10px 17px;
-
-      border-radius: 12px;
-
-
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          #6c5ce7,
-
-          #00a9a4
-
+      filter:
+        drop-shadow(
+          0 0 18px
+          rgba(108,92,231,0.45)
         );
 
-
-
-      color: #fff !important;
-
-      font-weight: 700;
-
-
-
-      box-shadow:
-
-        0 8px 25px rgba(108,92,231,.2);
-
+      animation:
+        logoFloat 4s ease-in-out infinite;
     }
-
 
 
     /* =========================
-
        MAIN
-
-    ========================= */
-
-
+    ========================== */
 
     main {
-
       min-height: 100vh;
-
-
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
-
-
       padding:
-
         120px 20px
+        80px;
 
-        70px;
-
+      text-align: center;
     }
-
 
 
     .content {
+      width: 100%;
+      max-width: 760px;
 
-      width: min(760px, 100%);
-
-      text-align: center;
-
-
-
-      animation: contentIn 1s ease both;
-
+      animation:
+        pageIn 0.8s ease both;
     }
-
 
 
     /* =========================
+       STATUS
+    ========================== */
 
-       LOGO
-
-    ========================= */
-
-
-
-    .logo-box {
-
-      width: 94px;
-
-      height: 94px;
-
-
-
-      margin: 0 auto 25px;
-
-
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-
-
-      border-radius: 27px;
-
-
-
-      background:
-
-        linear-gradient(
-
-          145deg,
-
-          rgba(108,92,231,.18),
-
-          rgba(0,206,201,.08)
-
-        );
-
-
-
-      border: 1px solid rgba(255,255,255,.11);
-
-
-
-      box-shadow:
-
-        0 0 50px rgba(108,92,231,.22),
-
-        inset 0 0 30px rgba(255,255,255,.025);
-
-
-
-      backdrop-filter: blur(15px);
-
-
-
-      animation: logoFloat 4s ease-in-out infinite;
-
-    }
-
-
-
-    .main-logo {
-
-      width: 66px;
-
-      height: 66px;
-
-      object-fit: contain;
-
-    }
-
-
-
-    /* =========================
-
-       BADGE
-
-    ========================= */
-
-
-
-    .badge {
-
+    .status {
       display: inline-flex;
 
       align-items: center;
 
-      gap: 9px;
+      gap: 10px;
 
-
-
-      padding: 9px 16px;
-
-
+      padding:
+        11px 20px;
 
       border-radius: 999px;
 
+      color: #c6c0ff;
 
+      background:
+        rgba(108,92,231,0.10);
 
-      background: rgba(108,92,231,.10);
+      border:
+        1px solid
+        rgba(108,92,231,0.30);
 
-      border: 1px solid rgba(108,92,231,.25);
-
-
-
-      color: #bdb6ff;
-
-
-
-      font-size: 13px;
+      font-size: 16px;
 
       font-weight: 700;
 
-
-
       box-shadow:
-
-        0 0 25px rgba(108,92,231,.08);
-
+        0 0 30px
+        rgba(108,92,231,0.08);
     }
 
 
-
-    .dot {
-
-      width: 8px;
-
-      height: 8px;
-
-
+    .status-dot {
+      width: 9px;
+      height: 9px;
 
       border-radius: 50%;
 
-
-
       background: #6c5ce7;
 
-
-
       box-shadow:
+        0 0 14px
+        #6c5ce7;
 
-        0 0 12px #6c5ce7;
-
-
-
-      animation: pulse 1.8s ease-in-out infinite;
-
+      animation:
+        pulse 1.7s ease-in-out infinite;
     }
 
 
-
     /* =========================
-
        TITLE
-
-    ========================= */
-
-
+    ========================== */
 
     h1 {
-
-      margin-top: 25px;
-
-
+      margin-top: 28px;
 
       font-size:
+        clamp(
+          44px,
+          8vw,
+          78px
+        );
 
-        clamp(43px, 8vw, 78px);
-
-
-
-      line-height: .98;
-
-
+      line-height: 1.02;
 
       letter-spacing: -3px;
 
-
-
       font-weight: 850;
-
     }
-
 
 
     .gradient {
-
       background:
-
         linear-gradient(
-
           90deg,
-
           #8c7fff,
-
           #6c5ce7,
-
+          #5b8cff,
           #00cec9
-
         );
 
-
+      background-size: 220% auto;
 
       -webkit-background-clip: text;
-
       background-clip: text;
-
-
 
       color: transparent;
 
-
-
-      background-size: 200% auto;
-
-
-
-      animation: gradientMove 5s linear infinite;
-
+      animation:
+        gradientMove 5s linear infinite;
     }
-
 
 
     /* =========================
-
        TEXT
+    ========================== */
 
-    ========================= */
+    .main-text {
+      max-width: 700px;
+
+      margin:
+        28px auto 0;
+
+      color:
+        rgba(255,255,255,0.78);
+
+      font-size: 20px;
+
+      line-height: 1.75;
+    }
 
 
+    .main-text strong {
+      color: #ffffff;
+    }
 
-    .description {
 
+    .secondary-text {
       max-width: 650px;
 
+      margin:
+        18px auto 0;
 
+      color:
+        rgba(255,255,255,0.46);
 
-      margin: 26px auto 0;
-
-
-
-      color: rgba(255,255,255,.73);
-
-
-
-      font-size: 18px;
-
-
+      font-size: 16px;
 
       line-height: 1.7;
-
     }
 
 
+    /* =========================
+       INFO CARD
+    ========================== */
 
-    .description strong {
+    .info-card {
+      max-width: 650px;
 
-      color: #fff;
+      margin:
+        34px auto 0;
 
-    }
+      padding:
+        21px 24px;
 
+      border-radius: 22px;
 
+      background:
+        rgba(255,255,255,0.045);
 
-    .sub-description {
+      border:
+        1px solid
+        rgba(255,255,255,0.10);
 
-      max-width: 600px;
+      color:
+        rgba(255,255,255,0.70);
 
-
-
-      margin: 14px auto 0;
-
-
-
-      color: rgba(255,255,255,.43);
-
-
-
-      font-size: 14px;
-
-
+      font-size: 15px;
 
       line-height: 1.65;
 
-    }
-
-
-
-    /* =========================
-
-       NOTICE
-
-    ========================= */
-
-
-
-    .notice {
-
-      width: min(620px, 100%);
-
-
-
-      margin: 30px auto 0;
-
-
-
-      padding: 17px 20px;
-
-
-
-      border-radius: 18px;
-
-
-
-      background:
-
-        rgba(255,255,255,.045);
-
-
-
-      border: 1px solid
-
-        rgba(255,255,255,.085);
-
-
-
-      color: rgba(255,255,255,.76);
-
-
-
-      font-size: 14px;
-
-
-
-      line-height: 1.55;
-
-
-
       box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.16);
 
-        0 15px 50px rgba(0,0,0,.12);
-
-
-
-      backdrop-filter: blur(14px);
-
+      backdrop-filter:
+        blur(15px);
     }
 
 
+    .info-card strong {
+      color: #ffffff;
+    }
+
 
     /* =========================
-
        FOOTER
-
-    ========================= */
-
-
+    ========================== */
 
     footer {
-
       position: fixed;
 
-      bottom: 18px;
-
       left: 0;
-
       right: 0;
 
-
+      bottom: 15px;
 
       text-align: center;
 
-
-
-      color: rgba(255,255,255,.28);
-
-
+      color:
+        rgba(255,255,255,0.25);
 
       font-size: 12px;
 
-
-
       pointer-events: none;
-
     }
-
 
 
     /* =========================
-
        ANIMATIONS
+    ========================== */
 
-    ========================= */
-
-
-
-    @keyframes contentIn {
+    @keyframes pageIn {
 
       from {
-
         opacity: 0;
 
-        transform: translateY(30px);
-
+        transform:
+          translateY(25px);
       }
 
-
-
       to {
-
         opacity: 1;
 
-        transform: translateY(0);
-
+        transform:
+          translateY(0);
       }
 
     }
-
 
 
     @keyframes logoFloat {
 
-      0%, 100% {
-
-        transform: translateY(0);
-
+      0%,
+      100% {
+        transform:
+          translateY(0);
       }
 
-
-
       50% {
-
-        transform: translateY(-8px);
-
+        transform:
+          translateY(-6px);
       }
 
     }
-
-
-
-    @keyframes brandFloat {
-
-      0%, 100% {
-
-        transform: translateY(0);
-
-      }
-
-
-
-      50% {
-
-        transform: translateY(-2px);
-
-      }
-
-    }
-
 
 
     @keyframes pulse {
 
-      0%, 100% {
-
-        transform: scale(1);
-
+      0%,
+      100% {
         opacity: 1;
-
+        transform: scale(1);
       }
 
-
-
       50% {
-
-        transform: scale(.65);
-
-        opacity: .45;
-
+        opacity: 0.45;
+        transform: scale(0.65);
       }
 
     }
-
 
 
     @keyframes gradientMove {
 
       0% {
-
-        background-position: 0% center;
-
+        background-position:
+          0% center;
       }
-
-
 
       100% {
-
-        background-position: 200% center;
-
+        background-position:
+          220% center;
       }
 
     }
 
 
-
-    @keyframes orbOne {
+    @keyframes purpleMove {
 
       from {
-
-        transform: translate(0,0);
-
+        transform:
+          translate(0,0);
       }
 
-
-
       to {
-
-        transform: translate(130px,90px);
-
+        transform:
+          translate(120px,80px);
       }
 
     }
 
 
-
-    @keyframes orbTwo {
+    @keyframes cyanMove {
 
       from {
-
-        transform: translate(0,0);
-
+        transform:
+          translate(0,0);
       }
 
-
-
       to {
-
-        transform: translate(-120px,-80px);
-
+        transform:
+          translate(-120px,-70px);
       }
 
     }
-
-
-
-    @keyframes orbThree {
-
-      from {
-
-        transform: translate(0,0);
-
-      }
-
-
-
-      to {
-
-        transform: translate(-100px,80px);
-
-      }
-
-    }
-
 
 
     /* =========================
-
        MOBILE
+    ========================== */
 
-    ========================= */
-
-
-
-    @media (max-width: 700px) {
-
-
+    @media (max-width: 650px) {
 
       header {
-
         height: 68px;
 
-        padding: 0 18px;
-
+        padding:
+          0 17px;
       }
-
 
 
       .brand {
-
-        font-size: 18px;
-
+        font-size: 20px;
       }
-
 
 
       .brand-logo {
-
-        width: 34px;
-
-        height: 34px;
-
+        width: 43px;
+        height: 43px;
       }
-
-
-
-      .nav {
-
-        gap: 10px;
-
-      }
-
-
-
-      .nav a:not(.nav-button) {
-
-        display: none;
-
-      }
-
-
-
-      .nav-button {
-
-        padding: 9px 13px;
-
-        font-size: 12px;
-
-      }
-
 
 
       main {
-
-        padding-top: 100px;
-
+        padding:
+          105px 18px
+          70px;
       }
 
 
+      .status {
+        font-size: 15px;
 
-      .logo-box {
-
-        width: 80px;
-
-        height: 80px;
-
-        border-radius: 23px;
-
+        padding:
+          10px 17px;
       }
-
-
-
-      .main-logo {
-
-        width: 56px;
-
-        height: 56px;
-
-      }
-
 
 
       h1 {
+        font-size:
+          clamp(
+            42px,
+            12vw,
+            62px
+          );
 
-        letter-spacing: -2px;
+        letter-spacing:
+          -2px;
 
+        margin-top:
+          27px;
       }
 
 
+      .main-text {
+        font-size: 18px;
 
-      .description {
-
-        font-size: 16px;
-
+        line-height: 1.7;
       }
 
 
-
-      .sub-description {
-
-        font-size: 13px;
-
+      .secondary-text {
+        font-size: 15px;
       }
 
 
+      .info-card {
+        font-size: 14px;
 
-      .notice {
-
-        font-size: 13px;
-
+        padding:
+          18px;
       }
-
 
 
       footer {
-
-        bottom: 10px;
-
+        bottom: 9px;
       }
 
     }
 
   </style>
-
 </head>
-
 
 
 <body>
 
 
-
-  <!-- Анимированный фон -->
+  <!-- =========================
+       ANIMATED BACKGROUND
+  ========================== -->
 
   <div class="background">
 
     <div class="grid"></div>
 
+    <div class="glow glow-purple"></div>
 
-
-    <div class="orb one"></div>
-
-    <div class="orb two"></div>
-
-    <div class="orb three"></div>
+    <div class="glow glow-cyan"></div>
 
   </div>
 
 
-
-  <!-- Верхняя панель -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
 
-
-
-    <a href="/" class="brand">
+    <a
+      href="/"
+      class="brand"
+    >
 
       <img
-
         src="/assets/funera-logo.png"
-
         alt="Funera AI"
-
         class="brand-logo"
-
       >
 
-
-
-      <span>Funera AI</span>
+      <span>
+        Funera AI
+      </span>
 
     </a>
-
-
-
-    <nav class="nav">
-
-      <a href="/">Главная</a>
-
-      <a href="/about.html">О нас</a>
-
-      <a href="/login.html" class="nav-button">Войти</a>
-
-    </nav>
-
-
 
   </header>
 
 
-
-  <!-- Главный экран -->
+  <!-- =========================
+       CONTENT
+  ========================== -->
 
   <main>
 
+    <section class="content">
 
 
-    <div class="content">
+      <div class="status">
 
-
-
-      <div class="logo-box">
-
-        <img
-
-          src="/assets/funera-logo.png"
-
-          alt="Funera AI"
-
-          class="main-logo"
-
-        >
-
-      </div>
-
-
-
-      <div class="badge">
-
-        <span class="dot"></span>
+        <span class="status-dot"></span>
 
         Подготовка к запуску
 
       </div>
 
 
-
       <h1>
 
-        Funera AI<br>
+        Funera AI
 
-        <span class="gradient">уже почти готов</span>
+        <br>
+
+        <span class="gradient">
+          уже почти готов
+        </span>
 
       </h1>
 
 
-
-      <p class="description">
+      <p class="main-text">
 
         Запуск временно задерживается из-за необходимости завершить
 
-        <strong>юридическое оформление сервиса</strong> и проверку
+        <strong>
+          юридическое оформление сервиса
+        </strong>
 
-        соответствия требованиям законодательства.
-
-      </p>
-
-
-
-      <p class="sub-description">
-
-        Мы завершаем необходимые документы, условия использования
-
-        и другие юридические вопросы перед официальным запуском.
+        и проверку соответствия требованиям законодательства.
 
       </p>
 
 
+      <p class="secondary-text">
 
-      <div class="notice">
+        Мы завершаем необходимые документы,
+        условия использования и другие юридические
+        вопросы перед официальным запуском.
+
+      </p>
+
+
+      <div class="info-card">
 
         🚀 Мы не хотим запускать Funera AI в спешке.
 
-        Сначала убедимся, что всё готово правильно —
+        <br>
 
+        Сначала убедимся, что всё готово правильно —
         и только после этого откроем сервис для пользователей.
 
         <br><br>
 
-        <strong>Спасибо за понимание и терпение ❤️</strong>
+        <strong>
+          Спасибо за понимание и терпение ❤️
+        </strong>
 
       </div>
 
 
-
-    </div>
-
-
+    </section>
 
   </main>
 
 
-
   <footer>
-
     © 2026 Funera AI
-
   </footer>
 
 
-
 </body>
-
 </html>
