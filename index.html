@@ -2,48 +2,114 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!-- =========================
+       PAGE
+  ========================== -->
 
   <title>Funera AI — Скоро запуск</title>
 
-  <meta name="description"
-        content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства.">
+  <meta
+    name="description"
+    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства."
+  >
 
   <!-- =========================
-       TELEGRAM / SOCIAL PREVIEW
+       TELEGRAM / OPEN GRAPH
   ========================== -->
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Funera AI — Скоро запуск">
-  <meta property="og:description"
-        content="Мы почти готовы. Запуск Funera AI временно задерживается из-за юридического оформления сервиса.">
-  <meta property="og:image"
-        content="https://m3rashteam-prog.github.io/assets/funera-preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="675">
-  <meta property="og:site_name" content="Funera AI">
-  <meta property="og:url"
-        content="https://m3rashteam-prog.github.io/">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Funera AI — Скоро запуск">
-  <meta name="twitter:description"
-        content="Мы почти готовы. Запуск Funera AI временно задерживается из-за юридического оформления сервиса.">
-  <meta name="twitter:image"
-        content="https://m3rashteam-prog.github.io/assets/funera-preview.png">
+  <meta
+    property="og:title"
+    content="Funera AI — Скоро запуск"
+  >
+
+  <meta
+    property="og:description"
+    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса и проверки соответствия требованиям законодательства."
+  >
+
+  <!--
+    ВАЖНО:
+    Telegram берёт превью именно отсюда.
+    Картинка должна быть доступна по этому адресу.
+  -->
+
+  <meta
+    property="og:image"
+    content="/funera-preview.png"
+  >
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Funera AI"
+  >
+
+  <meta
+    property="og:locale"
+    content="ru_RU"
+  >
 
   <!-- =========================
-       BROWSER TAB LOGO
+       TWITTER / OTHER PREVIEWS
   ========================== -->
 
-  <link rel="icon"
-        type="image/png"
-        href="/assets/funera-logo.png">
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
-  <link rel="apple-touch-icon"
-        href="/assets/funera-logo.png">
+  <meta
+    name="twitter:title"
+    content="Funera AI — Скоро запуск"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Funera AI почти готов. Запуск временно задерживается из-за юридического оформления сервиса."
+  >
+
+  <meta
+    name="twitter:image"
+    content="/funera-preview.png"
+  >
+
+  <!-- =========================
+       FAVICON
+  ==========================
+
+  Логотип ниже встроен прямо в HTML.
+  Поэтому отдельный logo.png для вкладки
+  не требуется.
+
+  -->
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%239b8fff'/%3E%3Cstop offset='.55' stop-color='%236c5ce7'/%3E%3Cstop offset='1' stop-color='%2300cec9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230b0a20'/%3E%3Cpath d='M72 17C88 25 94 43 88 59C82 76 66 87 48 87C31 87 16 77 11 62C7 49 11 34 21 24' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M34 70V31H66M34 47H59' fill='none' stroke='url(%23g)' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='74' cy='27' r='5' fill='%2300cec9'/%3E%3C/svg%3E"
+  >
 
   <style>
+
+    /* =========================
+       RESET
+    ========================== */
 
     * {
       margin: 0;
@@ -51,13 +117,13 @@
       box-sizing: border-box;
     }
 
-    html {
+    html,
+    body {
+      width: 100%;
       min-height: 100%;
     }
 
     body {
-      min-height: 100vh;
-
       font-family:
         Inter,
         -apple-system,
@@ -66,8 +132,8 @@
         Arial,
         sans-serif;
 
+      background: #070714;
       color: #ffffff;
-      background: #080817;
 
       overflow-x: hidden;
     }
@@ -87,51 +153,59 @@
 
       background:
         radial-gradient(
-          circle at 15% 20%,
-          rgba(108, 92, 231, 0.30),
-          transparent 38%
+          circle at 15% 15%,
+          rgba(108, 92, 231, .30),
+          transparent 37%
         ),
 
         radial-gradient(
-          circle at 85% 80%,
-          rgba(0, 206, 201, 0.22),
-          transparent 40%
+          circle at 85% 85%,
+          rgba(0, 206, 201, .21),
+          transparent 38%
         ),
 
         linear-gradient(
           135deg,
           #11102d 0%,
-          #09091d 55%,
-          #071c29 100%
+          #080817 55%,
+          #061c25 100%
         );
     }
 
 
-    /* Сетка */
+    /* сетка */
 
     .grid {
       position: absolute;
-      inset: 0;
+      inset: -100px;
 
-      opacity: 0.30;
+      opacity: .27;
 
       background-image:
         linear-gradient(
-          rgba(255,255,255,0.035) 1px,
+          rgba(255,255,255,.035) 1px,
           transparent 1px
         ),
 
         linear-gradient(
           90deg,
-          rgba(255,255,255,0.035) 1px,
+          rgba(255,255,255,.035) 1px,
           transparent 1px
         );
 
-      background-size: 52px 52px;
+      background-size: 55px 55px;
+
+      transform:
+        perspective(500px)
+        rotateX(55deg)
+        scale(1.5);
+
+      animation:
+        gridMove 18s linear infinite;
     }
 
 
-    /* Светящиеся сферы */
+    /* свечение */
 
     .glow {
       position: absolute;
@@ -145,15 +219,15 @@
 
 
     .glow-purple {
-      width: 430px;
-      height: 430px;
+      width: 450px;
+      height: 450px;
 
-      left: -180px;
-      top: 100px;
+      left: -190px;
+      top: 70px;
 
       background: #6c5ce7;
 
-      opacity: 0.22;
+      opacity: .23;
 
       animation:
         purpleMove 10s ease-in-out infinite alternate;
@@ -161,18 +235,95 @@
 
 
     .glow-cyan {
-      width: 430px;
-      height: 430px;
+      width: 450px;
+      height: 450px;
 
       right: -190px;
-      bottom: -130px;
+      bottom: -160px;
 
       background: #00cec9;
 
-      opacity: 0.20;
+      opacity: .20;
 
       animation:
         cyanMove 12s ease-in-out infinite alternate;
+    }
+
+
+    /* =========================
+       PARTICLES
+    ========================== */
+
+    .particles {
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+    }
+
+
+    .particle {
+      position: absolute;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background: #ffffff;
+
+      opacity: .35;
+
+      animation:
+        particleMove 7s linear infinite;
+    }
+
+
+    .p1 {
+      left: 8%;
+      top: 25%;
+    }
+
+    .p2 {
+      left: 19%;
+      top: 70%;
+      animation-delay: 1s;
+    }
+
+    .p3 {
+      left: 34%;
+      top: 18%;
+      animation-delay: 2s;
+    }
+
+    .p4 {
+      left: 50%;
+      top: 78%;
+      animation-delay: 3s;
+    }
+
+    .p5 {
+      left: 67%;
+      top: 25%;
+      animation-delay: 1.5s;
+    }
+
+    .p6 {
+      left: 80%;
+      top: 62%;
+      animation-delay: 4s;
+    }
+
+    .p7 {
+      left: 91%;
+      top: 18%;
+      animation-delay: 2.5s;
+    }
+
+    .p8 {
+      left: 57%;
+      top: 45%;
+      animation-delay: 5s;
     }
 
 
@@ -187,8 +338,6 @@
       left: 0;
       right: 0;
 
-      z-index: 100;
-
       height: 76px;
 
       display: flex;
@@ -196,11 +345,14 @@
 
       padding: 0 7%;
 
+      z-index: 50;
+
       background:
-        rgba(9, 8, 28, 0.72);
+        rgba(7,7,20,.62);
 
       border-bottom:
-        1px solid rgba(255,255,255,0.07);
+        1px solid
+        rgba(255,255,255,.07);
 
       backdrop-filter:
         blur(18px);
@@ -212,6 +364,7 @@
 
     .brand {
       display: flex;
+
       align-items: center;
 
       gap: 12px;
@@ -221,30 +374,78 @@
       text-decoration: none;
 
       font-size: 21px;
+
       font-weight: 800;
 
-      letter-spacing: -0.5px;
+      letter-spacing: -.5px;
     }
 
 
-    /* НОВОЕ ЛОГО */
+    /* =========================
+       LOGO
+    ========================== */
 
-    .brand-logo {
+    .logo {
       width: 45px;
       height: 45px;
 
-      object-fit: contain;
+      position: relative;
 
-      display: block;
+      display: flex;
 
-      filter:
-        drop-shadow(
-          0 0 18px
-          rgba(108,92,231,0.45)
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 14px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(108,92,231,.24),
+          rgba(0,206,201,.08)
         );
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      box-shadow:
+        0 0 28px
+        rgba(108,92,231,.34),
+
+        inset 0 0 18px
+        rgba(255,255,255,.04);
 
       animation:
         logoFloat 4s ease-in-out infinite;
+    }
+
+
+    .logo-glow {
+      position: absolute;
+
+      inset: -8px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(108,92,231,.24),
+          rgba(0,206,201,.14)
+        );
+
+      filter: blur(11px);
+
+      z-index: -1;
+    }
+
+
+    .logo svg {
+      width: 35px;
+      height: 35px;
+
+      overflow: visible;
     }
 
 
@@ -261,8 +462,8 @@
       justify-content: center;
 
       padding:
-        120px 20px
-        80px;
+        115px 20px
+        70px;
 
       text-align: center;
     }
@@ -270,10 +471,11 @@
 
     .content {
       width: 100%;
+
       max-width: 760px;
 
       animation:
-        pageIn 0.8s ease both;
+        pageIn .9s ease both;
     }
 
 
@@ -289,26 +491,22 @@
       gap: 10px;
 
       padding:
-        11px 20px;
+        10px 19px;
 
       border-radius: 999px;
 
-      color: #c6c0ff;
+      color: #c9c2ff;
 
       background:
-        rgba(108,92,231,0.10);
+        rgba(108,92,231,.10);
 
       border:
         1px solid
-        rgba(108,92,231,0.30);
+        rgba(108,92,231,.28);
 
-      font-size: 16px;
+      font-size: 15px;
 
       font-weight: 700;
-
-      box-shadow:
-        0 0 30px
-        rgba(108,92,231,0.08);
     }
 
 
@@ -338,7 +536,7 @@
 
       font-size:
         clamp(
-          44px,
+          45px,
           8vw,
           78px
         );
@@ -355,15 +553,16 @@
       background:
         linear-gradient(
           90deg,
-          #8c7fff,
+          #9b8fff,
           #6c5ce7,
-          #5b8cff,
+          #557dff,
           #00cec9
         );
 
-      background-size: 220% auto;
+      background-size: 250% auto;
 
       -webkit-background-clip: text;
+
       background-clip: text;
 
       color: transparent;
@@ -377,34 +576,34 @@
        TEXT
     ========================== */
 
-    .main-text {
-      max-width: 700px;
+    .description {
+      max-width: 690px;
 
       margin:
         28px auto 0;
 
       color:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,.77);
 
-      font-size: 20px;
+      font-size: 19px;
 
       line-height: 1.75;
     }
 
 
-    .main-text strong {
+    .description strong {
       color: #ffffff;
     }
 
 
-    .secondary-text {
-      max-width: 650px;
+    .sub-description {
+      max-width: 630px;
 
       margin:
-        18px auto 0;
+        17px auto 0;
 
       color:
-        rgba(255,255,255,0.46);
+        rgba(255,255,255,.44);
 
       font-size: 16px;
 
@@ -413,44 +612,47 @@
 
 
     /* =========================
-       INFO CARD
+       CARD
     ========================== */
 
-    .info-card {
+    .card {
       max-width: 650px;
 
       margin:
-        34px auto 0;
+        32px auto 0;
 
       padding:
-        21px 24px;
+        20px 23px;
 
       border-radius: 22px;
 
       background:
-        rgba(255,255,255,0.045);
+        rgba(255,255,255,.045);
 
       border:
         1px solid
-        rgba(255,255,255,0.10);
-
-      color:
-        rgba(255,255,255,0.70);
-
-      font-size: 15px;
-
-      line-height: 1.65;
+        rgba(255,255,255,.09);
 
       box-shadow:
         0 20px 60px
-        rgba(0,0,0,0.16);
+        rgba(0,0,0,.17),
+
+        inset 0 0 25px
+        rgba(255,255,255,.015);
 
       backdrop-filter:
         blur(15px);
+
+      color:
+        rgba(255,255,255,.68);
+
+      font-size: 14px;
+
+      line-height: 1.65;
     }
 
 
-    .info-card strong {
+    .card strong {
       color: #ffffff;
     }
 
@@ -465,16 +667,14 @@
       left: 0;
       right: 0;
 
-      bottom: 15px;
+      bottom: 14px;
 
       text-align: center;
 
       color:
-        rgba(255,255,255,0.25);
+        rgba(255,255,255,.22);
 
-      font-size: 12px;
-
-      pointer-events: none;
+      font-size: 11px;
     }
 
 
@@ -511,7 +711,7 @@
 
       50% {
         transform:
-          translateY(-6px);
+          translateY(-5px);
       }
 
     }
@@ -526,8 +726,8 @@
       }
 
       50% {
-        opacity: 0.45;
-        transform: scale(0.65);
+        opacity: .4;
+        transform: scale(.65);
       }
 
     }
@@ -542,7 +742,28 @@
 
       100% {
         background-position:
-          220% center;
+          250% center;
+      }
+
+    }
+
+
+    @keyframes gridMove {
+
+      from {
+        transform:
+          perspective(500px)
+          rotateX(55deg)
+          translateY(0)
+          scale(1.5);
+      }
+
+      to {
+        transform:
+          perspective(500px)
+          rotateX(55deg)
+          translateY(55px)
+          scale(1.5);
       }
 
     }
@@ -572,7 +793,34 @@
 
       to {
         transform:
-          translate(-120px,-70px);
+          translate(-120px,-80px);
+      }
+
+    }
+
+
+    @keyframes particleMove {
+
+      0% {
+        transform:
+          translateY(30px);
+
+        opacity: 0;
+      }
+
+      20% {
+        opacity: .4;
+      }
+
+      80% {
+        opacity: .25;
+      }
+
+      100% {
+        transform:
+          translateY(-120px);
+
+        opacity: 0;
       }
 
     }
@@ -582,7 +830,7 @@
        MOBILE
     ========================== */
 
-    @media (max-width: 650px) {
+    @media (max-width: 600px) {
 
       header {
         height: 68px;
@@ -593,28 +841,34 @@
 
 
       .brand {
-        font-size: 20px;
+        font-size: 19px;
       }
 
 
-      .brand-logo {
-        width: 43px;
-        height: 43px;
+      .logo {
+        width: 42px;
+        height: 42px;
+      }
+
+
+      .logo svg {
+        width: 33px;
+        height: 33px;
       }
 
 
       main {
         padding:
-          105px 18px
-          70px;
+          100px 18px
+          60px;
       }
 
 
       .status {
-        font-size: 15px;
+        font-size: 14px;
 
         padding:
-          10px 17px;
+          10px 16px;
       }
 
 
@@ -623,39 +877,31 @@
           clamp(
             42px,
             12vw,
-            62px
+            61px
           );
 
         letter-spacing:
           -2px;
-
-        margin-top:
-          27px;
       }
 
 
-      .main-text {
-        font-size: 18px;
+      .description {
+        font-size: 17px;
 
         line-height: 1.7;
       }
 
 
-      .secondary-text {
-        font-size: 15px;
-      }
-
-
-      .info-card {
+      .sub-description {
         font-size: 14px;
-
-        padding:
-          18px;
       }
 
 
-      footer {
-        bottom: 9px;
+      .card {
+        padding:
+          17px;
+
+        font-size: 13px;
       }
 
     }
@@ -668,7 +914,7 @@
 
 
   <!-- =========================
-       ANIMATED BACKGROUND
+       BACKGROUND
   ========================== -->
 
   <div class="background">
@@ -678,6 +924,20 @@
     <div class="glow glow-purple"></div>
 
     <div class="glow glow-cyan"></div>
+
+
+    <div class="particles">
+
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
+      <span class="particle p6"></span>
+      <span class="particle p7"></span>
+      <span class="particle p8"></span>
+
+    </div>
 
   </div>
 
@@ -691,13 +951,102 @@
     <a
       href="/"
       class="brand"
+      aria-label="Funera AI"
     >
 
-      <img
-        src="/assets/funera-logo.png"
-        alt="Funera AI"
-        class="brand-logo"
-      >
+      <div class="logo">
+
+        <div class="logo-glow"></div>
+
+
+        <!--
+          ВСТРОЕННЫЙ ЛОГОТИП
+          Никаких PNG/JPG для самого сайта
+        -->
+
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          aria-hidden="true"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="funeraGradient"
+              x1="10"
+              y1="10"
+              x2="90"
+              y2="90"
+            >
+
+              <stop
+                offset="0%"
+                stop-color="#9b8fff"
+              />
+
+              <stop
+                offset="52%"
+                stop-color="#6c5ce7"
+              />
+
+              <stop
+                offset="100%"
+                stop-color="#00cec9"
+              />
+
+            </linearGradient>
+
+          </defs>
+
+
+          <!-- внешний символ -->
+
+          <path
+            d="
+              M72 17
+              C88 25 94 43 88 59
+              C82 76 66 87 48 87
+              C31 87 16 77 11 62
+              C7 49 11 34 21 24
+            "
+            stroke="url(#funeraGradient)"
+            stroke-width="8"
+            stroke-linecap="round"
+          />
+
+
+          <!-- F -->
+
+          <path
+            d="
+              M34 70
+              V31
+              H66
+
+              M34 47
+              H59
+            "
+            stroke="url(#funeraGradient)"
+            stroke-width="9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+
+          <!-- AI -->
+
+          <circle
+            cx="74"
+            cy="27"
+            r="5"
+            fill="#00cec9"
+          />
+
+        </svg>
+
+      </div>
+
 
       <span>
         Funera AI
@@ -709,13 +1058,15 @@
 
 
   <!-- =========================
-       CONTENT
+       MAIN
   ========================== -->
 
   <main>
 
     <section class="content">
 
+
+      <!-- статус -->
 
       <div class="status">
 
@@ -725,6 +1076,8 @@
 
       </div>
 
+
+      <!-- заголовок -->
 
       <h1>
 
@@ -739,20 +1092,26 @@
       </h1>
 
 
-      <p class="main-text">
+      <!-- основная причина -->
 
-        Запуск временно задерживается из-за необходимости завершить
+      <p class="description">
+
+        Запуск временно задерживается
+        из-за необходимости завершить
 
         <strong>
           юридическое оформление сервиса
         </strong>
 
-        и проверку соответствия требованиям законодательства.
+        и проверку соответствия
+        требованиям законодательства.
 
       </p>
 
 
-      <p class="secondary-text">
+      <!-- дополнительная информация -->
+
+      <p class="sub-description">
 
         Мы завершаем необходимые документы,
         условия использования и другие юридические
@@ -761,14 +1120,17 @@
       </p>
 
 
-      <div class="info-card">
+      <!-- карточка -->
+
+      <div class="card">
 
         🚀 Мы не хотим запускать Funera AI в спешке.
 
         <br>
 
         Сначала убедимся, что всё готово правильно —
-        и только после этого откроем сервис для пользователей.
+        и только после этого откроем сервис
+        для пользователей.
 
         <br><br>
 
@@ -783,6 +1145,10 @@
 
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
     © 2026 Funera AI
